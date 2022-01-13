@@ -6,7 +6,7 @@ function ViewWordpress() {
   return (
     <Container>
       {data.map((project) => (
-        <ProjectBox>
+        <ProjectBox key={project.title}>
           <h3>{project.title}</h3>
           <img src={project.img} alt="" />
         </ProjectBox>

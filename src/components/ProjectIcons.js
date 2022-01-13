@@ -1,37 +1,36 @@
-import React from "react";
-import BootstrapLogo from "../assets/svgs/bootstrap-logo.svg";
-import ReactLogo from "../assets/svgs/react-logo.svg";
-import OdinLogo from "../assets/svgs/odin-logo.svg";
-import SassLogo from "../assets/svgs/sass-logo.svg";
-import NextLogo from "../assets/svgs/next-logo.svg";
-import TailwindLogo from "../assets/svgs/tailwind-logo.svg";
-import VueLogo from "../assets/svgs/vue-logo.svg";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
+import IconGen from './IconGen'
 
 function ProjectIcons({ icons }) {
   return (
-    <IconTray>
-      {icons.map((icon) => {
-        if (icon === "React") return <img key={icon} src={ReactLogo} alt="" />;
-        if (icon === "Bootstrap") return <img key={icon} src={BootstrapLogo} alt="" />;
-        if (icon === "Odin") return <img key={icon} src={OdinLogo} alt="" />;
-        if (icon === "Sass") return <img key={icon} src={SassLogo} alt="" />;
-        if (icon === "Next") return <img key={icon} src={NextLogo} alt="" />;
-        if (icon === "Tailwind") return <img key={icon} src={TailwindLogo} alt="" />;
-        if (icon === "Vue") return <img key={icon} src={VueLogo} alt="" />;
-      })}
-    </IconTray>
-  );
+    <Container>
+      {icons.map((icon) => (
+        <IconTray>
+          <IconGen key={icon} icon={icon} color="white" size="3rem" />
+          <p>{icon}</p>
+        </IconTray>
+      ))}
+    </Container>
+  )
 }
 
-export default ProjectIcons;
+export default ProjectIcons
+
+const Container = styled.div`
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+`
 
 const IconTray = styled.div`
   display: flex;
+  align-items: center;
 
-  img {
-    width: 36px;
-    height: 36px;
-    margin: 3px 8px;
+  p {
+    margin-left: 1.5rem;
+    color: white;
+    font-size: 1.6rem;
   }
-`;
+`

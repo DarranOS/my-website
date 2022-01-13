@@ -1,35 +1,35 @@
-import Home from "./layout/Home";
-import Header from "./components/Header";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Detail from "./components/Detail";
-import data from "./assets/data/projectData";
+import Home from './layout/Home'
+import NavMenu from './layout/NavMenu'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Detail from './components/Detail'
+import data from './assets/data/projectData'
+import styled from 'styled-components'
 
 function App() {
-  console.log(data);
   return (
-    <div className="App">
+    <Container className="App">
       <Router>
-        <Header />
+        <NavMenu />
         <Switch>
-          <Route path="/detail1">
+          <Route path="/projects-1">
             <Detail info={data[0]} />
           </Route>
-          <Route path="/detail2">
+          <Route path="/projects-2">
             <Detail info={data[1]} />
           </Route>
-          <Route path="/detail3">
+          <Route path="/projects-3">
             <Detail info={data[2]} />
           </Route>
-          <Route path="/detail4">
+          <Route path="/projects-4">
             <Detail info={data[3]} />
           </Route>
-          <Route path="/detail5">
+          <Route path="/projects-5">
             <Detail info={data[4]} />
           </Route>
-          <Route path="/detail6">
+          <Route path="/projects-6">
             <Detail info={data[5]} />
           </Route>
-          <Route path="/detail7">
+          <Route path="/projects-7">
             <Detail info={data[6]} />
           </Route>
 
@@ -39,8 +39,10 @@ function App() {
           <Home />
         </Switch>
       </Router>
-    </div>
-  );
+    </Container>
+  )
 }
 
-export default App;
+export default App
+
+const Container = styled.div``
