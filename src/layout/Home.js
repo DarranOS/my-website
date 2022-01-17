@@ -1,47 +1,49 @@
-import React from "react";
-import Section from "./Section";
-import styled from "styled-components";
-import ViewProjects from "./ViewProjects";
-import colors from "../styles/Colors";
-import AboutMe from "./AboutMe";
-import ContactForm from "./ContactForm";
-import ClipPaths from "../styles/ClipPaths";
-import gradient from "../styles/gradients";
+import React from 'react'
+import Section from './Section'
+import styled from 'styled-components'
+import ViewProjects from './ViewProjects'
+import colors from '../styles/Colors'
+import AboutMe from './AboutMe'
+import ContactForm from './ContactForm'
+import ClipPaths from '../styles/ClipPaths'
+import gradient from '../styles/gradients'
+import Welcome from './Welcome'
 
 // import ColorBlock from "./ColorBlock";
 
 const Home = () => {
   return (
     <Container>
-      <Section
-        heading1={[["Darran", "O'Shea"], `${colors.white}`]}
-        heading2={[["FullStack", "WebDesign", "Graphics"], `${colors.white}`]}
+      <Welcome />
+      {/* <Section
+        heading1={[['Darran', "O'Shea"], `${colors.white}`]}
+        heading2={[['FullStack', 'WebDesign', 'Graphics'], `${colors.white}`]}
         color={colors.primary}
         leftButton={[
-          "#",
-          "Check out my work",
+          '#',
+          'Check out my work',
           `${colors.primary}`,
           `${colors.secondary}`,
-          "noShadow",
+          'noShadow',
         ]}
         bgImg="/images/lucky2.jpg"
-        bgImgOpac={[".8", "multiply"]}
+        bgImgOpac={['.8', 'multiply']}
         topMargin="0vh"
         bgOpac={0.9}
         bgColor={gradient(
-          "linear",
+          'linear',
           `${colors.primary}`,
           `${colors.secondary}`,
-          "60",
-          "80"
+          '60',
+          '80'
         )}
         zIndex={10}
         clip={ClipPaths.hero}
         arrow
-      ></Section>
+      ></Section> */}
 
-      <Section
-        heading3={["A Little About Me"]}
+      {/* <Section
+        heading3={['A Little About Me']}
         color={colors.white}
         topMargin="-10vh"
         topPadding="40%"
@@ -49,21 +51,23 @@ const Home = () => {
         zIndex={0}
       >
         <AboutMe />
-      </Section>
+      </Section> */}
 
-      <Section
+      <AboutMe />
+
+      {/* <Section
         // heading2={["My Projects", `${colors.white}`]}
         color={colors.purple}
         bgImg="/images/hypnotic-brass-grey_1220.jpg"
-        bgImgOpac={["1", "color-dodge"]}
+        bgImgOpac={['1', 'color-dodge']}
         bgOpac={1}
         zIndex={10}
         bgColor={gradient(
-          "linear",
+          'linear',
           `${colors.primary}`,
           `${colors.darkOrange}`,
-          "10",
-          "90"
+          '10',
+          '90'
         )}
         clip={ClipPaths.hero2}
       >
@@ -71,7 +75,7 @@ const Home = () => {
       </Section>
 
       <Section
-        heading3={["Skills & Artwork"]}
+        heading3={['Skills & Artwork']}
         color="mediumturquoise"
         desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste amet saepe earum autem velit temporibus? Exercitationem tempora, quam ab esse suscipit, eligendi repellendus praesentium nesciunt vitae ratione rem facere aliquam!"
         leftButton="5"
@@ -81,26 +85,28 @@ const Home = () => {
       />
 
       <Section
-        heading2={[["Get in Touch"], `${colors.white}`]}
+        heading2={[['Get in Touch'], `${colors.white}`]}
         color={colors.grad1}
-        bgImgOpac={["0.8", "multiply"]}
+        bgImgOpac={['0.8', 'multiply']}
         zIndex={0}
         bgColor={gradient(
-          "linear",
+          'linear',
           `${colors.primary}`,
           `${colors.secondary}`,
-          "20",
-          "80"
+          '20',
+          '80'
         )}
       >
         <ContactForm />
-      </Section>
+      </Section>  */}
     </Container>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 const Container = styled.div`
-  height: 100vh;
-`;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`

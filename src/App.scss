@@ -18,7 +18,7 @@
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
   color: #393c41;
   box-sizing: border-box;
@@ -53,15 +53,18 @@ h2 {
 } */
 
 h3 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-family: 'BasementGrotesque';
   text-transform: uppercase;
   display: inline-block;
   letter-spacing: 0.5rem;
-  background-image: linear-gradient(to right, #fe9622, #fec922);
-  -webkit-background-clip: text;
-  color: transparent;
+
   transition: all 0.2s;
+  text-align: center;
+
+  @media (min-wdith: 600) {
+    font-size: 4rem;
+  }
 }
 
 h3:hover {
@@ -84,7 +87,7 @@ p {
   font-size: 1.6rem;
 }
 
-p::selection: {
+p::selection {
   background: #ff8c00;
   color: yellow;
   font-size: 1.9;

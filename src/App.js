@@ -4,14 +4,16 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Detail from './components/Detail'
 import data from './assets/data/projectData'
 import styled from 'styled-components'
+import './App.scss'
 
 function App() {
   return (
-    <Container className="App">
+    <Container>
+      {/* className="App"> */}
       <Router>
-        <NavMenu />
+        {/* <NavMenu /> */}
         <Switch>
-          <Route path="/projects-1">
+          {/* <Route path="/projects-1">
             <Detail info={data[0]} />
           </Route>
           <Route path="/projects-2">
@@ -31,7 +33,7 @@ function App() {
           </Route>
           <Route path="/projects-7">
             <Detail info={data[6]} />
-          </Route>
+          </Route> */}
 
           <Route path="/">
             <Home />

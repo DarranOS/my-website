@@ -1,8 +1,8 @@
-import React from "react";
-import data from "../assets/data/projectData";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import colors from "../styles/Colors";
+import React from 'react'
+import data from '../assets/data/projectData'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import colors from '../styles/Colors'
 
 function ViewProjects({ textColor }) {
   return (
@@ -27,23 +27,23 @@ function ViewProjects({ textColor }) {
         </ImageContainer>
       </MainContainer>
     </Container>
-  );
+  )
 }
 
-export default ViewProjects;
+export default ViewProjects
 
 const Container = styled.div`
   width: 90%;
   display: grid;
   grid-template-columns: 1fr 16fr;
   gap: 10vw;
-`;
+`
 
 const MainContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-row: 1fr 1fr;
-`;
+`
 
 const Heading = styled.div`
   h2 {
@@ -51,7 +51,7 @@ const Heading = styled.div`
     writing-mode: tb-rl;
     transform: rotate(-180deg);
   }
-`;
+`
 
 const TextContainer = styled.div`
   display: flex;
@@ -80,11 +80,13 @@ const TextContainer = styled.div`
       font-size: 3.6rem;
     }
   }
-`;
+`
 
 const ImageContainer = styled.div`
   transistion: all 0.2s ease-in;
-`;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+`
 
 const ProjectBox = styled.div`
   display: flex;
@@ -125,7 +127,7 @@ const ProjectBox = styled.div`
   }
 
   ${
-    "" /* .project-2 {
+    '' /* .project-2 {
     top: 20rem;
   }
 
@@ -148,4 +150,4 @@ const ProjectBox = styled.div`
   :hover {
     z-index: 25;
   }
-`;
+`

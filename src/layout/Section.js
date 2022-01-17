@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Animations from "../styles/Animations";
-import { ArrowDown } from "../components/svgs/svgs";
-import MainButton from "../components/MainButton";
+import React from 'react'
+import styled from 'styled-components'
+import Animations from '../styles/Animations'
+import { ArrowDown } from '../components/svgs/svgs'
+import MainButton from '../components/MainButton'
 
 const Section = ({
   heading1,
@@ -89,24 +89,25 @@ const Section = ({
         </ArrowContainer>
       )}
     </Wrap>
-  );
-};
+  )
+}
 
-export default Section;
+export default Section
 
 const Wrap = styled.div`
   ${
-    "" /* margin-top: ${(props) => props.margin};
+    '' /* margin-top: ${(props) => props.margin};
   padding-top: ${(props) => props.padding}; */
   }
 
-  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: ${(props) => props.zIndex};
+  border: 2px dashed indigo;
+  overflow: hidden;
 
   :not(:first-child) {
     margin-top: 15rem;
@@ -116,10 +117,12 @@ const Wrap = styled.div`
     margin-bottom: 15rem;
   }
 
-  :last-child {
+  ${
+    '' /* :last-child {
     margin-bottom: 30px;
+  } */
   }
-`;
+`
 
 const Background = styled.div`
   position: absolute;
@@ -129,7 +132,7 @@ const Background = styled.div`
   right: 0;
   z-index: -1;
   clip-path: ${(props) => props.clip};
-`;
+`
 
 const BackOverlay = styled.div`
   position: absolute;
@@ -140,7 +143,7 @@ const BackOverlay = styled.div`
   z-index: -1;
   opacity: ${(props) => props.opacity};
   background: ${(props) => props.color};
-`;
+`
 
 const BgImgContainer = styled.div`
   opacity: ${(props) => props.opacity};
@@ -156,7 +159,7 @@ const BgImgContainer = styled.div`
     height: 100%;
     object-fit: cover;
   }
-`;
+`
 
 const LogoDiv = styled.div`
   position: absolute;
@@ -164,9 +167,13 @@ const LogoDiv = styled.div`
   top: 0;
   left: 0;
   right: 0;
-`;
+`
 
-const CentralDiv = styled.div``;
+const CentralDiv = styled.div`
+  width: 100%;
+  border: 4px solid blue;
+  padding: 0;
+`
 
 const ItemText = styled.div`
   display: flex;
@@ -176,11 +183,10 @@ const ItemText = styled.div`
   backface-visibilty: hidden;
   z-index: 20;
 
-  padding: 30px;
   p {
     color: ${(props) => props.color};
   }
-`;
+`
 
 const HeadingContainer1 = styled.div`
   color: ${(props) => props.color};
@@ -193,7 +199,7 @@ const HeadingContainer1 = styled.div`
     animation-fill-mode: backwards;
     animation-delay: 0.2s;
   }
-`;
+`
 
 const HeadingContainer2 = styled.div`
   color: ${(props) => props.color};
@@ -207,20 +213,20 @@ const HeadingContainer2 = styled.div`
     animation-fill-mode: backwards;
     animation-delay: 0.4s;
   }
-`;
+`
 
 const HeadingContainer3 = styled.div`
   color: ${(props) => props.color};
   width: 100%;
   text-align: center;
-`;
+`
 
 const ChildrenContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
   padding: 5vh;
-`;
+`
 
 const ButtonGroup = styled.div`
   display: flex;
@@ -237,26 +243,26 @@ const ButtonGroup = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`;
+`
 
 const RightButton = styled(MainButton)`
   background: red;
-`;
+`
 
 const ArrowContainer = styled.div`
   position: absolute;
   bottom: 0;
-`;
+`
 
 const ArrowProxy = styled(ArrowDown)`
   height: 50px;
   width: auto;
   animation: 1s ${Animations.animateDown} infinite 1.5s;
   filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.2));
-`;
+`
 
 const Buttons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
