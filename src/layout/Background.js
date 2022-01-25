@@ -10,7 +10,7 @@ export default Background
 const Container = styled.div`
   transform: ${(props) => props.scale};
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   z-index: -50;
   top: 0;

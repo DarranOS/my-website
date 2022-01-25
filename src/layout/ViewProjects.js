@@ -3,28 +3,65 @@ import data from '../assets/data/projectData'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import colors from '../styles/Colors'
+// import { motion, AnimatePresence } from 'framer-motion'
+// import FadeInUp from '../components/FadeInUp'
+// import Slide from '../components/Slide'
+import Frame from '../components/Frame'
+import Animations from '../styles/Animations'
 
-function ViewProjects({ textColor }) {
+const container = {
+  show: {
+    transition: {
+      staggerChildren: 0.35,
+    },
+  },
+}
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 200,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 200,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.8,
+    },
+  },
+}
+
+const ViewProjects = () => {
   return (
     <Container>
       <Heading>
-        <h2>My Projects</h2>
+        <h2> Projects</h2>
       </Heading>
       <MainContainer>
-        <TextContainer color={textColor}>
-          <h3>Technologies Used</h3>
-        </TextContainer>
-        <ImageContainer>
-          {data.map((project) => (
-            <ProjectBox key={project.id}>
-              <div className={project.id}>
-                <Link to={project.url}>
-                  <img src={project.img} alt="" />
-                </Link>
-              </div>
-            </ProjectBox>
-          ))}
-        </ImageContainer>
+        <ProjectBox>
+          <Link to={data[1].url}>
+            <Frame src={data[1].img} />
+          </Link>
+        </ProjectBox>
+        <ProjectBox>
+          <Link to={data[2].url}>
+            <Frame src={data[2].img} />
+          </Link>{' '}
+        </ProjectBox>
+        <ProjectBox>
+          <Link to={data[3].url}>
+            <Frame src={data[3].img} />
+          </Link>{' '}
+        </ProjectBox>
       </MainContainer>
     </Container>
   )
@@ -33,83 +70,71 @@ function ViewProjects({ textColor }) {
 export default ViewProjects
 
 const Container = styled.div`
-  width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 16fr;
-  gap: 10vw;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0vh 5vw;
+
+  @media (min-width: 667px) {
+    padding: 0vh 15vw;
+  }
+`
+
+const Heading = styled.div`
+  width: 100%;
+  z-index: 10;
+
+  
+  @media (min-width: 667px) {
+  place-self: center;
+  }
+
+  h2 {
+    background-image: linear-gradient(to right, #fec922, #fe9622);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      text-align: center;
+      padding-right: 0;
+      width: 100%;
+  }
 `
 
 const MainContainer = styled.div`
   width: 100%;
-  display: grid;
-  grid-template-row: 1fr 1fr;
-`
-
-const Heading = styled.div`
-  h2 {
-    color: black;
-    writing-mode: tb-rl;
-    transform: rotate(-180deg);
-  }
-`
-
-const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
-  color: ${(props) => props.color};
-
-  h3 {
-    color: black;
+  div:nth-child(2) {
+    justify-content: flex-start;
   }
-  p {
-    font-size: 1.6rem;
-    color: white;
-    background: orange;
-    box-decoration-break: clone;
-    display: inline;
-
-    ::first-letter {
-      font-size: 2rem;
-    }
-
-    ::selection {
-      background: black;
-      color: yellow;
-      font-size: 3.6rem;
-    }
-  }
-`
-
-const ImageContainer = styled.div`
-  transistion: all 0.2s ease-in;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
 `
 
 const ProjectBox = styled.div`
   display: flex;
   justify-content: center;
+  width: 100vw;
+  padding: 5vh 0vw;
+  filter: drop-shadow(0px 4px 2px orange);
+  animation: 0.5s ${Animations.moveUpBottom} ease-in-out;
+  animation-iteration-count: 1;
+  webkit-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+  animation-delay: 0.5s;
+`
+/* 
+const ProjectBox = styled.div`
+  place-self: center;
+  justify-content: center;
   cursor: pointer;
   border-radius: 20px;
-  width: 20%;
 
-  transition: all 1s;
-  transform: rotate(15deg) skewY(1deg) skewX(1deg);
+  background: hotpink;
 
-  div {
-    width: 100%;
-    outline-offset: 2rem;
-    transition: all 0.4s ease-in-out;
-
-    :hover {
-      transform: scale(1.1) rotate(-18deg) skewY(-1deg) skewX(-1deg);
-    }
-
-    :not(:hover) {
-      transform: scale(0.95);
-    }
 
     img {
       border-radius: 5px;
@@ -117,30 +142,7 @@ const ProjectBox = styled.div`
       width: 20vw;
       box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
       display: inline-block;
-
-      &:hover {
-        transform: scale(1.2) rotate(3deg) translateY(-2rem) translateX(2rem);
-        outline-offset: 1.5rem;
-        outline: 0.5rem solid ${colors.compBlue};
-      }
     }
-  }
-
-  ${
-    '' /* .project-2 {
-    top: 20rem;
-  }
-
-  .project-4,
-  .project-5 {
-    top: -10rem;
-    left: -10rem;
-    position: absolute;
-
-    :hover {
-      top: -15rem;
-    }
-  } */
   }
 
   h3 {
@@ -150,4 +152,4 @@ const ProjectBox = styled.div`
   :hover {
     z-index: 25;
   }
-`
+` */

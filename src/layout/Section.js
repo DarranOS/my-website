@@ -108,6 +108,7 @@ const Wrap = styled.div`
   z-index: ${(props) => props.zIndex};
   border: 2px dashed indigo;
   overflow: hidden;
+  height: 100vh;
 
   :not(:first-child) {
     margin-top: 15rem;

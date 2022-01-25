@@ -6,7 +6,7 @@ import gradient from '../styles/gradients'
 
 const Welcome = () => {
   return (
-    <Wrap zIndex={10}>
+    <Wrap zIndex={1000}>
       <Background clip={ClipPaths.hero}>
         <BackOverlay
           opacity={0.9}
@@ -24,15 +24,22 @@ const Welcome = () => {
       </Background>
 
       <CentralDiv>
-        <Header>
+        <div>
           <HeadingContainer1>
             <h1>Darran</h1>
           </HeadingContainer1>
 
-          <HeadingContainer2>O'Shea</HeadingContainer2>
-
-          <HeadingContainer3>WebDesign/Fullstack</HeadingContainer3>
-        </Header>
+          <HeadingContainer2>
+            <h1>O'Shea</h1>
+          </HeadingContainer2>
+        </div>
+        <div>
+          <HeadingContainer3>
+            <h2>Nerd</h2>
+            <h2>Fullstack Dev</h2>
+            <h2>Designer</h2>
+          </HeadingContainer3>
+        </div>
       </CentralDiv>
     </Wrap>
   )
@@ -48,7 +55,7 @@ const Wrap = styled.div`
   align-items: center;
   position: relative;
   z-index: ${(props) => props.zIndex};
-  border: 2px dashed indigo;
+
   overflow: hidden;
 
   :not(:first-child) {
@@ -86,9 +93,13 @@ const BgImgContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  bottom: 0px;
+  right: -900px;
   mix-blend-mode: ${(props) => props.mixMode};
+
+  @media (min-width: 668px) {
+    right: 0;
+  }
 
   img {
     width: 100%;
@@ -98,28 +109,29 @@ const BgImgContainer = styled.div`
 `
 
 const CentralDiv = styled.div`
+  height: 100vh;
   width: 100%;
-  border: 4px solid blue;
-  padding: 0;
-`
-
-const Header = styled.div`
+  padding: 5%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  backface-visibilty: hidden;
-  z-index: 20;
+  justify-content: space-between;
 
-  p {
-    color: ${(props) => props.color};
+  @media (min-width: 668px) {
+    justify-content: center;
   }
 `
 
 const HeadingContainer1 = styled.div`
-  color: ${(props) => props.color};
+  color: white;
+  display: flex;
+
+  @media (min-width: 668px) {
+    justify-content: center;
+  }
 
   h1 {
+    font-size: 16.5vw;
+    line-height: 1.2;
     position: relative;
     animation: 0.5s ${Animations.fadeInRight} ease-in-out;
     animation-iteration-count: 1;
@@ -130,9 +142,17 @@ const HeadingContainer1 = styled.div`
 `
 
 const HeadingContainer2 = styled.div`
-  color: ${(props) => props.color};
+  color: white;
+  margin-bottom: 2vh;
 
-  h2 {
+  @media (min-width: 668px) {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 18.5vw;
+
+    line-height: 0.7;
     color: ${(props) => props.color};
     position: relative;
     animation: 0.5s ${Animations.fadeInLeft} ease-in-out;
@@ -147,16 +167,37 @@ const HeadingContainer3 = styled.div`
   color: ${(props) => props.color};
   width: 100%;
   text-align: center;
-`
+  display: flex;
+  flex-direction: column;
 
-// {<Section
-//   heading1={[['Darran', "O'Shea"], `${colors.white}`]}
-//   heading2={[['FullStack', 'WebDesign', 'Graphics'], `${colors.white}`]}
-//   color={colors.primary}
-//   leftButton={[
-//     '#',
-//     'Check out my work',
-//     `${colors.primary}`,
-//     `${colors.secondary}`,
-//     'noShadow',
-//   ]}
+  @media (min-width: 667px) {
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 8vw;
+    line-height: 1.4;
+    width: max-content;
+    color: ${colors.compBlue2};
+    animation: 0.5s ${Animations.moveUpBottom} ease-in-out;
+    animation-iteration-count: 1;
+    webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+    animation-delay: 0.6s;
+
+    @media (min-width: 667px) {
+      font-size: 5.3vw;
+    }
+  }
+
+  h2:nth-child(2) {
+    color: white;
+    background: ${colors.compBlue2Fade};
+    animation-delay: 0.8s;
+  }
+  h2:nth-child(3) {
+    animation-delay: 1s;
+  }
+`

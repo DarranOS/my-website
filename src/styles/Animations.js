@@ -12,7 +12,7 @@ const Animations = {
 
   fadeInRight: keyframes`
     0% {opacity:0; right: 30vw}
-    90% {opacity: .9; right: 1vw}
+    90% {opacity: .9; right: -1vw}
     100% {opacity: 1; right: 0vw}
     `,
   fadeInLeft: keyframes`

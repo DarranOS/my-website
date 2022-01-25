@@ -37,10 +37,11 @@ const Container = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: ${(props) => (props.border ? `${props.border}` : `2px solid white`)};
+  border: ${(props) => (props.border ? `${props.border}` : `2px solid white`)};
   transition: all 0.2s;
   padding: 0.6rem 1.8rem;
   width: min-content;
+  border-radius: 8px;
   background: ${(props) => (props.bgColor ? `${props.bgColor}` : `${colors.white}`)};
 
   p {
@@ -50,11 +51,15 @@ const Container = styled.a`
   }
   :hover,
   :active {
-    background: ${(props) =>
-      props.hBgColor ? `${props.hBgColor}` : `${colors.primary}`};
+    ${
+      '' /* background: ${(props) =>
+      props.hBgColor ? `${props.hBgColor}` : `${colors.primary}`}; */
+    }
 
-    > * {
+    ${
+      '' /* > * {
       color: ${(props) => (props.HtColor ? props.HtColor : colors.primary)};
+    } */
     }
   }
 

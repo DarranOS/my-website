@@ -5,74 +5,78 @@ import ProjectIcons from './ProjectIcons'
 import Background from '../layout/Background'
 import Animations from '../styles/Animations'
 import ProjectData from '../assets/data/projectData'
-import { ChevronLeft1, ChevronRight1 } from './Chevrons'
 import SpecialButton from './SpecialButton'
 import IconGen from './IconGen'
+import Frame from './Frame'
 
 const Detail = ({ info }) => {
   const galleryLength = ProjectData.length
 
   return (
     <Container bg={info.img}>
-      <Background color={colors.grLightOrange}>
-        <img alt="" />
-      </Background>
-      <ProjectImage>
-        <img src={info.img} />
-      </ProjectImage>
-
-      <LeftNavChevron>
-        <a
-          href={`/projects-${Number(info.id) < 2 ? galleryLength : Number(info.id) - 1}`}
-        >
-          <ChevronLeft1 />
-        </a>
-      </LeftNavChevron>
-      <RightNavChevron>
-        <a
-          href={`/projects-${Number(info.id) >= galleryLength ? 1 : Number(info.id) + 1}`}
-        >
-          <ChevronRight1 />
-        </a>
-      </RightNavChevron>
-
-      <ProjectName>
-        <h2>{info.title}</h2>
-      </ProjectName>
+      <Background color={colors.grLightOrange}></Background>
 
       <ProjectInfo>
-        <ExternalLinks>
-          <SpecialButton
-            link={['/', 'self', 'noopener noreferrer']}
-            text="Back"
-            tColor={colors.primary}
-            HtColor={colors.white}
-            bgColor={colors.white}
-            border="3px solid black"
-          >
-            <IconGen icon="Backspace" color="orange" size="3rem" hovercolor="white" />
-          </SpecialButton>
-          <SpecialButton
-            link={[info.git]}
-            text="Repo"
-            tColor={colors.primary}
-            HtColor={colors.white}
-            bgColor={colors.white}
-            border="3px solid black"
-          >
-            <IconGen icon="Github" color="orange" size="3rem" hovercolor="white" />
-          </SpecialButton>
-          <SpecialButton
-            link={[info.deploy]}
-            text="Deployed"
-            tColor={colors.whitey}
-            HtColor={colors.white}
-            bgColor={colors.black}
-            border="3px solid white"
-          >
-            <IconGen icon="Deploy" color="white" size="3rem" hovercolor="white" />
-          </SpecialButton>
-        </ExternalLinks>
+        <ProjectName>
+          <h2>{info.title}</h2>
+        </ProjectName>
+        <ProjectHeader>
+          <LeftNavChevron>
+            <a
+              href={`/projects-${
+                Number(info.id) < 2 ? galleryLength : Number(info.id) - 1
+              }`}
+            >
+              <IconGen icon="ChevronThinLeft" size="42px" color={colors.white} />
+            </a>
+          </LeftNavChevron>
+          <FrameDiv>
+            <Frame src={info.img} />
+            <ExternalLinks>
+              <SpecialButton
+                link={['/', 'self', 'noopener noreferrer']}
+                text="Back"
+                tColor={colors.white}
+                bgColor="transparent"
+                border="2px solid white"
+              >
+                <IconGen icon="Backspace" color="white" size="3rem" hovercolor="white" />
+              </SpecialButton>
+              <SpecialButton
+                link={[info.git]}
+                text="Repo"
+                tColor={colors.white}
+                bgColor="transparent"
+                border="2px solid white"
+              >
+                <IconGen icon="Github" color="white" size="3rem" hovercolor="white" />
+              </SpecialButton>
+              <SpecialButton
+                link={[info.deploy]}
+                text="Deployment"
+                tColor={colors.primary}
+                bgColor={colors.white}
+                border="2px solid white"
+              >
+                <IconGen
+                  icon="Deploy"
+                  color={colors.primary}
+                  size="3rem"
+                  hovercolor="white"
+                />
+              </SpecialButton>
+            </ExternalLinks>
+          </FrameDiv>
+          <RightNavChevron>
+            <a
+              href={`/projects-${
+                Number(info.id) >= galleryLength ? 1 : Number(info.id) + 1
+              }`}
+            >
+              <IconGen icon="ChevronThinRight" size="42px" color={colors.white} />
+            </a>
+          </RightNavChevron>
+        </ProjectHeader>
 
         <ProjectDesc>
           <ProjectBrief>
@@ -83,7 +87,6 @@ const Detail = ({ info }) => {
               </li>
             ))}
           </ProjectBrief>
-
           <ProjectToDo>
             <h4>Planned updates</h4>
 
@@ -121,46 +124,69 @@ const Detail = ({ info }) => {
 export default Detail
 
 const Container = styled.div`
-  padding: 0 calc(5.5vw + 5rem);
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  height: 100vh;
-  gap: 10vmin;
+  flex-direction: column;
   position: relative;
+  margin: 0;
+  padding: 2vh 2vh;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 0 calc(5.5vw + 5rem);
+  }
+`
+
+const ProjectHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    justify-contents: space-around;
+  }
 `
 
 const LeftNavChevron = styled.div`
-  position: absolute;
-  z-index: 100;
-  top: 50%;
-  left: 8%;
+  display: flex;
+  margin-left: -20px;
+  margin-bottom: 5rem;
 `
 const RightNavChevron = styled.div`
-  position: absolute;
-  z-index: 100;
-  right: 8%;
-  top: 50%;
+  display: flex;
+  position: relative;
+  margin-right: -20px;
+  margin-bottom: 5rem;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    right: 8%;
+  }
 `
 
-const ProjectImage = styled.div`
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  position: absolute;
-  top: 25vh;
-  right: 20%;
-  z-index: -10;
-  width: 30%;
-  img {
-    opacity: 0;
-  }
+const FrameDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
 `
 
 const ProjectName = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 10%;
+  margin-bottom: 2vh;
+
+  @media (min-width: 768px) {
+    width: 20%;
+  }
 
   h2 {
+    font-size: 10.5vw;
     color: white;
     position: relative;
     animation: 0.5s ${Animations.fadeDropDown} ease-in-out;
@@ -168,52 +194,70 @@ const ProjectName = styled.div`
     webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
     animation-delay: 0.2s;
-    line-height: 1;
-    writing-mode: tb-rl;
+
+    @media (min-width: 768px) {
+      writing-mode: tb-rl;
+      margin-right: 3vw;
+    }
   }
 `
 
 const ProjectInfo = styled.div`
-  grid-area: desc;
-  place-self: center start;
-  display: grid;
-  grid-template-rows: 1fr 6fr 1fr;
-  grid-template-columns: 1fr;
-  width: 76%;
-  gap: 10vmin;
-  grid:
-    'links'
-    'info'
-    'icons';
+  @media (min-width: 768px) {
+    grid-area: desc;
+    place-self: center start;
+    display: grid;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: 1fr;
+    width: 76%;
+    gap: 10vmin;
+    grid:
+      'links'
+      'info'
+      'icons';
+  }
 `
 
 const ExternalLinks = styled.div`
-  grid-area: links;
-  place-self: start;
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 2rem;
+  margin: 2vh 0;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    grid-area: links;
+    place-self: start;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
 `
 
 const ProjectDesc = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contents: space-around;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    justify-contents: space-around;
+  }
 `
 const ProjectBrief = styled.div`
   list-style: none;
   color: white;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 
   h4 {
-    font-size: 4rem;
-    color: ${colors.grey6};
-    text-decoration: underline;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: ${colors.white};
+    margin-top: 4rem;
+    margin-bottom: 2rem;
   }
   p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   li {
@@ -228,16 +272,14 @@ const ProjectToDo = styled.div`
   list-style: none;
   color: white;
 
-  h4 {
-    font-size: 3rem;
-    color: ${colors.grey6};
-    text-decoration: underline;
-    margin-bottom: 3rem;
-  }
   li {
     display: flex;
     align-items: center;
     padding: 0.8rem 0;
+
+    div {
+      width: 2rem;
+    }
   }
   p {
     font-size: 1.6rem;
@@ -248,12 +290,15 @@ const ProjectToDo = styled.div`
 const TodoList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 40%;
+  width: 100%;
+
+  li > div {
+  }
 `
 const DoneList = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 40%;
+  width: 100%;
 
   span {
     color: forestgreen;

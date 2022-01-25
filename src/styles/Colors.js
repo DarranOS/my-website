@@ -6,6 +6,8 @@ const colors = {
   black: 'rgba(0, 0, 0)',
   darkOrange: '#ff8c00',
   compBlue: '#0073ff',
+  compBlue2: '#327bd7',
+  compBlue2Fade: 'rgba(50, 123, 215,.85)',
 
   white: '#fff',
   grey1: '#111',
@@ -34,6 +36,8 @@ const colors = {
   grLightOrange: 'linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)',
   grDarkOrange: 'linear-gradient(220.55deg, #FFC328 0%, #E20000 100%)',
   grSoftOrange: 'linear-gradient(220.55deg, #FFF500 0%, #FFB800 100%)',
+  grad9:
+    'linear-gradient(55deg, rgb(0,0,0) 0%, rgb(0,0,0) 45%, rgb(40,40,40) 50%, rgb(40,40,40) 55%, rgb(0,0,0) 60%, rgb(0,0,0) 100%)',
 }
 
 export default colors

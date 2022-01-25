@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import colors from "../styles/Colors";
-import menuData from "../assets/data/menuData";
-import Animations from "../styles/Animations";
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import colors from '../styles/Colors'
+import menuData from '../assets/data/menuData'
+import Animations from '../styles/Animations'
 
 function NavButton() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+    setMenuOpen(!menuOpen)
+  }
 
   return (
     <Container>
@@ -18,7 +18,7 @@ function NavButton() {
       </Button>
 
       {menuOpen && (
-        <Background scale={menuOpen ? "scale(1)" : "scale(0.1)"}>
+        <Background scale={menuOpen ? 'scale(1)' : 'scale(0.1)'}>
           <MenuList>
             {menuData.map((data) => (
               <li key={data.id}>
@@ -33,10 +33,10 @@ function NavButton() {
         </Background>
       )}
     </Container>
-  );
+  )
 }
 
-export default NavButton;
+export default NavButton
 
 const Container = styled.div`
   position: relative;
@@ -46,12 +46,12 @@ const Container = styled.div`
   div {
     font-size: 2rem;
   }
-`;
+`
 
 const Button = styled.button`
   position: fixed;
-  top: 6.5rem;
-  right: 6.5rem;
+  top: 3%;
+  right: 5%;
   z-index: 1000;
   background: white;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
@@ -68,14 +68,14 @@ const Button = styled.button`
   span {
     width: 3rem;
     height: 3px;
-    background: ${(props) => (props.active ? "transparent" : `${colors.primary}`)};
+    background: ${(props) => (props.active ? 'transparent' : `${colors.primary}`)};
     display: inline-block;
     position: relative;
 
     ::before,
     ::after {
       position: absolute;
-      content: "";
+      content: '';
       width: 3rem;
       height: 3px;
       display: inline-block;
@@ -83,29 +83,29 @@ const Button = styled.button`
       background: ${colors.primary};
     }
     ::before {
-      top: ${(props) => (props.active ? "0" : "-.8rem")};
+      top: ${(props) => (props.active ? '0' : '-.8rem')};
       left: 0;
-      transform: ${(props) => (props.active ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.active ? 'rotate(45deg)' : 'rotate(0)')};
     }
     ::after {
-      top: ${(props) => (props.active ? "0" : ".8rem")};
+      top: ${(props) => (props.active ? '0' : '.8rem')};
       left: 0;
-      transform: ${(props) => (props.active ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${(props) => (props.active ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 
   &:hover span::before {
-    top: ${(props) => (props.active ? "0" : "-1rem")};
+    top: ${(props) => (props.active ? '0' : '-1rem')};
   }
 
   &:hover span::after {
-    top: ${(props) => (props.active ? "0" : "1rem")};
+    top: ${(props) => (props.active ? '0' : '1rem')};
   }
 
   :active {
     transform: translateY(3px);
   }
-`;
+`
 
 const Background = styled.div`
   transform: ${(props) => props.scale};
@@ -121,14 +121,14 @@ const Background = styled.div`
   justify-content: center;
   align-items: center;
   transition: all 3s;
-`;
+`
 
 const MenuList = styled.div`
   font-size: 1.6rem;
   z-index: 900;
   list-style: none;
   text-align: center;
-`;
+`
 
 const MenuItem = styled.div`
   margin: 1rem;
@@ -136,7 +136,7 @@ const MenuItem = styled.div`
   a,
   a:link,
   a:visited {
-    font-family: "BasementGrotesque";
+    font-family: 'BasementGrotesque';
     letter-spacing: 0.6rem;
     display: inline-block;
     font-size: 3rem;
@@ -149,7 +149,7 @@ const MenuItem = styled.div`
     transition: all 0.2s;
 
     span {
-      font-family: "Aleo";
+      font-family: 'Aleo';
       margin-right: 1rem;
       font-style: italic;
       font-weight: 100;
@@ -166,4 +166,4 @@ const MenuItem = styled.div`
     color: ${colors.primary};
     transform: translateX(1rem);
   }
-`;
+`
