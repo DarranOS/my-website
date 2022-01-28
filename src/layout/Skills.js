@@ -158,7 +158,31 @@ const Skills = () => {
       </TextGrid>
 
       <Contact>
-        <h3>Get In Touch</h3>
+        <h3>Get In Touch!</h3>
+        <p>I'd love to here from you.</p>
+        <ContactIcons>
+          <a href="tel:07456638412">
+            <ContactIcon>
+              <IconHolder>
+                <IconGen icon="Phone" size="48px" color="white" />
+              </IconHolder>
+              <div>
+                <p>Call Me</p>
+              </div>
+            </ContactIcon>
+          </a>
+          <a href="mailto:darranoshea@gmail.com">
+            <ContactIcon>
+              <IconHolder>
+                <IconGen icon="Email" size="48px" color="white" />
+              </IconHolder>
+              <div>
+                <p>Email Me</p>
+              </div>
+            </ContactIcon>
+          </a>
+        </ContactIcons>
+
         <div>
           <ContactForm width={'100%'} />
         </div>
@@ -198,11 +222,11 @@ const Contact = styled.div`
   width: 100%;
   z-index: 100;
   margin-top: 8vh;
-  margin-bottom: 12vh;
+  margin-bottom: 6vh;
+  color: white;
 
   h3 {
     font-size: 4rem;
-    color: white;
 
     @media (min-width: 1200px) {
       margin-bottom: 4vh;
@@ -214,6 +238,18 @@ const Contact = styled.div`
 
     @media (min-width: 992px) {
       width: 70%;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+
+    a {
+      background: ${colors.compBlue};
+      color: white;
     }
   }
 `
@@ -350,4 +386,41 @@ const TextBox = styled.div`
       margin-left: 0.5vw;
     }
   }
+`
+
+const ContactIcons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+  width: 100%;
+
+  a {
+    width: 48%;
+  }
+`
+
+const ContactIcon = styled.div`
+  background: ${colors.compBlue};
+  color: white;
+  border-radius: 4px;
+  margin: 1vh 0;
+  display: flex;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: flex-start;
+
+  div {
+  }
+
+  p {
+    margin-left: 5vw;
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    font-family: 'BasementGrotesque';
+    text-transform: uppercase;
+  }
+`
+
+const IconHolder = styled.div`
+  max-width: 48px;
 `

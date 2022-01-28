@@ -44,6 +44,8 @@ import { ChevronLeft } from '@styled-icons/feather/ChevronLeft'
 import { ChevronRight } from '@styled-icons/feather/ChevronRight'
 import { Elementor } from '@styled-icons/fa-brands/Elementor'
 import { Wordpress } from '@styled-icons/simple-icons/Wordpress'
+import { Phone } from '@styled-icons/material/Phone'
+import { Email } from '@styled-icons/material/Email'
 const Logo = styled.div`
   display: flex;
   width: ${(props) => props.size};
@@ -314,6 +316,18 @@ function IconGen({ icon, color, size, hoverColor }) {
       return (
         <Logo size={size} color={color} hoverColor={hoverColor}>
           <Elementor />
+        </Logo>
+      )
+    case 'Email':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <Email />
+        </Logo>
+      )
+    case 'Phone':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <Phone />
         </Logo>
       )
 

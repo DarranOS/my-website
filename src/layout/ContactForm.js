@@ -38,7 +38,10 @@ function ContactForm({ width }) {
   return (
     <Container width={width}>
       {submitted ? (
-        <div> Thank you for submitting your query. I'll get back to you asap.</div>
+        <FormSubmitted>
+          <p>Thank you for reaching out to me. </p>
+          <p>I'll get back to you as soon as I can.</p>
+        </FormSubmitted>
       ) : (
         <>
           <form onSubmit={handleSubmit(onSubmit)} id="contact-form" ref={form}>
@@ -166,6 +169,22 @@ const Container = styled.div`
       transform: translateY(1rem);
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
     }
+  }
+`
+
+const FormSubmitted = styled.div`
+  margin: 0.5vh 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 20%;
+
+  p {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
   }
 `
 
