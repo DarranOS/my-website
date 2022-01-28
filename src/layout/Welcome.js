@@ -139,6 +139,7 @@ const CentralDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5%;
 
   @media (min-width: 768px) {
     justify-content: center;
@@ -165,7 +166,7 @@ const HeadingContainer1 = styled.div`
   }
 
   h1 {
-    font-size: 15vw;
+    font-size: 17vw;
     letter-spacing: -0.5vw;
     line-height: 1.2;
     position: relative;
@@ -214,7 +215,7 @@ const HeadingContainer2 = styled.div`
   }
 
   h1 {
-    font-size: 20vw;
+    font-size: 22vw;
     letter-spacing: -1.25vw;
     line-height: 0.7;
     color: ${(props) => props.color};
@@ -256,21 +257,21 @@ const HeadingContainer3 = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 10vh;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: 768px) {
-    justify-content: center;
     align-items: center;
     margin-bottom: 0;
   }
   @media (min-width: 1200px) {
-    justify-content: center;
     align-items: flex-start;
     margin-bottom: 0;
   }
 
   h2 {
     width: min-content;
-    font-size: 8vw;
+    font-size: 10vw;
     line-height: 0.1;
     padding: 2rem 0 1.3rem 0;
     color: ${colors.compBlue2};

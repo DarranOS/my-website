@@ -7,20 +7,13 @@ import colors from '../styles/Colors'
 const Skills = () => {
   return (
     <Container>
-      <Contact>
-        <h3>Get In Touch</h3>
-        <div>
-          <ContactForm width={'100%'} />
-        </div>
-      </Contact>
-
       <Heading>
         <h3>I Can Do...</h3>
         <p>
           Here's some of the tools, applications and frameworks that I've been playing
-          with for the past year, at various levels of fluency. Terms and conditions
-          apply.
+          with for the past year, at various levels of fluency.
         </p>
+        <p>Terms and conditions apply.</p>
       </Heading>
       <TextGrid>
         <TextContainer>
@@ -88,10 +81,7 @@ const Skills = () => {
               <IconGen icon="Material Ui" size="24px" color="white" />
               <p>Material UI</p>
             </TextBox>
-            <TextBox>
-              <IconGen icon="Illustrator" size="24px" color="white" />
-              <p>Adobe Illustrator</p>
-            </TextBox>
+
             <TextBox>
               <IconGen icon="Photoshop" size="24px" color="white" />
               <p>Adobe Photoshop</p>
@@ -103,6 +93,10 @@ const Skills = () => {
             <TextBox>
               <IconGen icon="Sass" size="24px" color="white" />
               <p>SASS</p>
+            </TextBox>
+            <TextBox>
+              <IconGen icon="Elementor" size="24px" color="white" />
+              <p>Elementor</p>
             </TextBox>
           </TextBoxes>
         </TextContainer>
@@ -122,6 +116,12 @@ const Skills = () => {
               <IconGen icon="Next JS" size="24px" color="white" />
               <p>Next JS</p>
             </TextBox>
+
+            <TextBox>
+              <IconGen icon="Wordpress" size="24px" color="white" />
+              <p>Wordpress</p>
+            </TextBox>
+
             <TextBox>
               <IconGen icon="Firebase" size="24px" color="white" />
               <p>Firebase</p>
@@ -134,14 +134,7 @@ const Skills = () => {
               <IconGen icon="JSON" size="24px" color="white" />
               <p>JSON Server</p>
             </TextBox>
-            <TextBox>
-              <IconGen icon="Postman" size="24px" color="white" />
-              <p>Postman</p>
-            </TextBox>
-            <TextBox>
-              <IconGen icon="Visual Studio" size="24px" color="white" />
-              <p>Axios</p>
-            </TextBox>
+
             <TextBox>
               <IconGen icon="Database Outline" size="24px" color="white" />
               <p>SQL Databases</p>
@@ -151,46 +144,25 @@ const Skills = () => {
               <IconGen icon="Visual Studio" size="24px" color="white" />
               <p>REST APIs</p>
             </TextBox>
-
-            <TextBox>
-              <IconGen icon="Ubuntu" size="24px" color="white" />
-              <p>Ubuntu CLI</p>
-            </TextBox>
-            <TextBox>
-              <IconGen icon="Git" size="24px" color="white" />
-              <p>Git</p>
-            </TextBox>
-            <TextBox>
-              <IconGen icon="Google Cloud Platform" size="24px" color="white" />
-              <p>Google Cloud Platform</p>
-            </TextBox>
-          </TextBoxes>
-        </TextContainer>
-
-        <TextContainer>
-          <TextTitle>
-            <h4>And I'm still googling...</h4>
-          </TextTitle>
-          <TextBoxes>
-            <TextBox>
-              <IconGen icon="Babel" size="24px" color="white" />
-              <p>Babel</p>
-            </TextBox>
             <TextBox>
               <IconGen icon="Jest" size="24px" color="white" />
               <p>Jest</p>
             </TextBox>
+
             <TextBox>
-              <IconGen icon="Database" size="24px" color="white" />
-              <p>NonSQL Databases</p>
-            </TextBox>
-            <TextBox>
-              <IconGen icon="Webpack" size="24px" color="white" />
-              <p>Webpack</p>
+              <IconGen icon="Git" size="24px" color="white" />
+              <p>Git</p>
             </TextBox>
           </TextBoxes>
         </TextContainer>
       </TextGrid>
+
+      <Contact>
+        <h3>Get In Touch</h3>
+        <div>
+          <ContactForm width={'100%'} />
+        </div>
+      </Contact>
     </Container>
   )
 }
@@ -198,24 +170,24 @@ const Skills = () => {
 export default Skills
 
 const Container = styled.div`
-  margin-top: 10vh;
+  margin-top: 5vh;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
   overflowx: hidden;
   width: 100%;
-  padding: 20vh 5vw;
+  padding: 15vh 5vw;
   min-height: 100vh;
   background-image: linear-gradient(220.55deg, #ffc328 0%, #e25500 100%);
   clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
 
   @media (min-width: 1200px) {
+    margin-top: 12vh;
     display: flex;
     flex-direction: column;
     padding: 0vh 15vw;
     clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 100%);
     padding-top: 8vh;
-    margin-top: 0;
   }
 `
 
@@ -233,7 +205,6 @@ const Contact = styled.div`
     color: white;
 
     @media (min-width: 1200px) {
-      margin-top: 12vh;
       margin-bottom: 4vh;
     }
   }
@@ -270,6 +241,10 @@ const Heading = styled.div`
   p {
     color: white;
     line-height: 1.6;
+
+    :not(:last-child) {
+      margin-bottom: 2vh;
+    }
   }
 `
 
@@ -295,7 +270,7 @@ const TextContainer = styled.div`
     color: white;
     font-size: 1.6rem;
     margin-top: 6vh;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
     padding: 0.2rem 0.4rem;
     letter-spacing: 0.2rem;
     line-height: 2;

@@ -42,7 +42,8 @@ import { Database } from '@styled-icons/heroicons-solid/Database'
 import { Database as DatabaseFeather } from '@styled-icons/heroicons-outline/Database'
 import { ChevronLeft } from '@styled-icons/feather/ChevronLeft'
 import { ChevronRight } from '@styled-icons/feather/ChevronRight'
-
+import { Elementor } from '@styled-icons/fa-brands/Elementor'
+import { Wordpress } from '@styled-icons/simple-icons/Wordpress'
 const Logo = styled.div`
   display: flex;
   width: ${(props) => props.size};
@@ -301,6 +302,18 @@ function IconGen({ icon, color, size, hoverColor }) {
       return (
         <Logo size={size} color={color} hoverColor={hoverColor}>
           <ChevronRight />
+        </Logo>
+      )
+    case 'Wordpress':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <Wordpress />
+        </Logo>
+      )
+    case 'Elementor':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <Elementor />
         </Logo>
       )
 
