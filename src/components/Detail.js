@@ -1,122 +1,107 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import colors from '../styles/Colors'
 import ProjectIcons from './ProjectIcons'
-import Background from '../layout/Background'
 import Animations from '../styles/Animations'
-import ProjectData from '../assets/data/projectData'
 import SpecialButton from './SpecialButton'
 import IconGen from './IconGen'
 import Frame from './Frame'
+import { Link } from 'react-router-dom'
 
 const Detail = ({ info }) => {
-  const galleryLength = ProjectData.length
-
   return (
-    <Container bg={info.img}>
-      <Background color={colors.grLightOrange}></Background>
+    <Container>
+      {/* <ProjectInfo> */}
+      <FrameDiv>
+        <Frame src={info.img} href={info.deploy} />
 
-      <ProjectInfo>
-        <ProjectName>
-          <h2>{info.title}</h2>
-        </ProjectName>
-        <ProjectHeader>
-          <LeftNavChevron>
-            <a
-              href={`/projects-${
-                Number(info.id) < 2 ? galleryLength : Number(info.id) - 1
-              }`}
+        <ExternalLinks>
+          <Link to="/">
+            <SpecialButton
+              link={['/', 'self', 'noopener noreferrer']}
+              text="Back"
+              tColor={colors.white}
+              bgColor="transparent"
+              border="2px solid white"
             >
-              <IconGen icon="ChevronThinLeft" size="42px" color={colors.white} />
-            </a>
-          </LeftNavChevron>
-          <FrameDiv>
-            <Frame src={info.img} />
-            <ExternalLinks>
-              <SpecialButton
-                link={['/', 'self', 'noopener noreferrer']}
-                text="Back"
-                tColor={colors.white}
-                bgColor="transparent"
-                border="2px solid white"
-              >
-                <IconGen icon="Backspace" color="white" size="3rem" hovercolor="white" />
-              </SpecialButton>
-              <SpecialButton
-                link={[info.git]}
-                text="Repo"
-                tColor={colors.white}
-                bgColor="transparent"
-                border="2px solid white"
-              >
-                <IconGen icon="Github" color="white" size="3rem" hovercolor="white" />
-              </SpecialButton>
-              <SpecialButton
-                link={[info.deploy]}
-                text="Deployment"
-                tColor={colors.primary}
-                bgColor={colors.white}
-                border="2px solid white"
-              >
-                <IconGen
-                  icon="Deploy"
-                  color={colors.primary}
-                  size="3rem"
-                  hovercolor="white"
-                />
-              </SpecialButton>
-            </ExternalLinks>
-          </FrameDiv>
-          <RightNavChevron>
-            <a
-              href={`/projects-${
-                Number(info.id) >= galleryLength ? 1 : Number(info.id) + 1
-              }`}
-            >
-              <IconGen icon="ChevronThinRight" size="42px" color={colors.white} />
-            </a>
-          </RightNavChevron>
-        </ProjectHeader>
+              <IconGen icon="Backspace" color="white" size="3rem" hovercolor="white" />
+              <p>Back</p>
+            </SpecialButton>
+          </Link>
+          <SpecialButton
+            link={[info.git]}
+            text="Repo"
+            tColor={colors.white}
+            bgColor="transparent"
+            border="2px solid white"
+          >
+            <IconGen icon="Github" color="white" size="3rem" hovercolor="white" />
+            <p>Repo</p>
+          </SpecialButton>
+          <SpecialButton
+            link={[info.deploy]}
+            text="Deployment"
+            tColor={colors.white}
+            bgColor={colors.compBlue}
+            border="2px solid white"
+          >
+            <IconGen icon="Deploy" color={colors.white} size="3rem" hovercolor="white" />
+            <p>Visit</p>
+          </SpecialButton>
+        </ExternalLinks>
+      </FrameDiv>
+      <ProjectName>
+        <h2>{info.title}</h2>
 
-        <ProjectDesc>
-          <ProjectBrief>
-            <h4>The Brief</h4>
-            {info.desc.map((para) => (
-              <li>
-                <p>{para}</p>
-              </li>
-            ))}
-          </ProjectBrief>
-          <ProjectToDo>
-            <h4>Planned updates</h4>
+        <p>
+          <em>Status: {info.status} </em>
+        </p>
+      </ProjectName>
+      <ProjectDesc>
+        <QuickNotes>
+          {info.quick.map((para, index) => (
+            <li key={index}>
+              <p>{para}</p>
+            </li>
+          ))}
+        </QuickNotes>
+        <ProjectBrief>
+          {info.desc.map((para, index) => (
+            <li key={index}>
+              <p>{para}</p>
+            </li>
+          ))}
+        </ProjectBrief>
+        <ProjectToDo>
+          <h4>Planned updates</h4>
 
-            <TodoList>
-              {info.todo &&
-                info.todo.map((para) => (
-                  <li key={info.id}>
-                    <IconGen icon="Github" color="white" size="3rem" />
+          <TodoList>
+            {info.todo &&
+              info.todo.map((para, index) => (
+                <li key={index}>
+                  <IconGen icon="Github" color="white" size="3rem" />
+                  <p>{para}</p>
+                </li>
+              ))}
+          </TodoList>
+          <DoneList>
+            {info.done &&
+              info.done.map((para, index) => (
+                <li key={index}>
+                  <IconGen icon="TickBox" color={colors.compBlue} size="3rem" />
+                  <span>
                     <p>{para}</p>
-                  </li>
-                ))}
-            </TodoList>
-            <DoneList>
-              {info.done &&
-                info.done.map((para) => (
-                  <li key={info.id}>
-                    <IconGen icon="TickBox" color="forestgreen" size="3rem" />
-                    <span>
-                      <p>{para}</p>
-                    </span>
-                  </li>
-                ))}
-            </DoneList>
-          </ProjectToDo>
-        </ProjectDesc>
-        <ProjectIconsDiv>
-          <IconText>Made with questionable code, coffee and ....</IconText>
-          <ProjectIcons icons={info.icons} />
-        </ProjectIconsDiv>
-      </ProjectInfo>
+                  </span>
+                </li>
+              ))}
+          </DoneList>
+        </ProjectToDo>
+      </ProjectDesc>
+      <ProjectIconsDiv>
+        <IconText>Made with questionable code, coffee and ....</IconText>
+        <ProjectIcons icons={info.icons} />
+      </ProjectIconsDiv>
+      {/* </ProjectInfo> */}
     </Container>
   )
 }
@@ -125,68 +110,63 @@ export default Detail
 
 const Container = styled.div`
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
-  margin: 0;
-  padding: 2vh 2vh;
+  padding: 0 2vw;
 
-  @media (min-width: 768px) {
-    flex-direction: row;
-    padding: 0 calc(5.5vw + 5rem);
-  }
-`
-
-const ProjectHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-
-  @media (min-width: 768px) {
-    justify-contents: space-around;
-  }
-`
-
-const LeftNavChevron = styled.div`
-  display: flex;
-  margin-left: -20px;
-  margin-bottom: 5rem;
-`
-const RightNavChevron = styled.div`
-  display: flex;
-  position: relative;
-  margin-right: -20px;
-  margin-bottom: 5rem;
-
-  @media (min-width: 768px) {
-    position: absolute;
-    z-index: 100;
-    top: 50%;
-    right: 8%;
+  @media (min-width: 1200px) {
+    padding: 2vh 2vw;
+    display: grid;
+    grid:
+      'title title title'
+      'left right right'
+      'footer footer footer';
   }
 `
 
 const FrameDiv = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
   position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: 2vh;
+
+  > a {
+    filter: drop-shadow(0 1px 1px white);
+    width: 100%;
+
+    @media (min-width: 1200px) {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    grid-area: left;
+    align-items: flex-start;
+    margin-top: 0;
+    grid-column: 1 / 2;
+    margin-right: 2vw;
+    max-width: 30vw;
+  }
 `
 
 const ProjectName = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 2vh;
+  margin-bottom: 4vh;
 
-  @media (min-width: 768px) {
-    width: 20%;
+  @media (min-width: 1200px) {
+    grid-area: title;
+    margin-bottom: 2vh;
+    padding: 0;
+    margin-top: 3vh;
   }
 
   h2 {
-    font-size: 10.5vw;
+    font-size: 6vw;
     color: white;
     position: relative;
     animation: 0.5s ${Animations.fadeDropDown} ease-in-out;
@@ -195,56 +175,80 @@ const ProjectName = styled.div`
     animation-fill-mode: backwards;
     animation-delay: 0.2s;
 
-    @media (min-width: 768px) {
-      writing-mode: tb-rl;
-      margin-right: 3vw;
+    @media (min-width: 1200px) {
+      font-size: 3.5vw;
+      line-height: 0.8;
+      border-bottom: 1px solid white;
     }
   }
-`
 
-const ProjectInfo = styled.div`
-  @media (min-width: 768px) {
-    grid-area: desc;
-    place-self: center start;
-    display: grid;
-    grid-template-rows: 1fr 6fr 1fr;
-    grid-template-columns: 1fr;
-    width: 76%;
-    gap: 10vmin;
-    grid:
-      'links'
-      'info'
-      'icons';
+  p {
+    color: white;
   }
 `
 
 const ExternalLinks = styled.div`
-  margin: 2vh 0;
+  margin: 4vh 0;
   display: flex;
+  width: 100%;
   justify-content: space-between;
 
   p {
     display: none;
+    font-size: 1.4rem;
   }
-  @media (min-width: 768px) {
-    grid-area: links;
-    place-self: start;
-    display: grid;
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-contents: space-between;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 2rem;
+
+    p {
+      display: flex;
+    }
   }
 `
 
 const ProjectDesc = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  @media (min-width: 768px) {
-    justify-contents: space-around;
+  @media (min-width: 1200px) {
+    justify-contents: center;
+    grid-column: 2 / span 2;
+    grid-area: right;
   }
 `
+
+const QuickNotes = styled.div`
+  margin-bottom: 2vh;
+
+  @media (min-width: 1200px) {
+    border-top: 1px solid white;
+  }
+
+  li {
+    padding: 0.2rem;
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 1vh;
+
+    @media (min-width: 1200px) {
+      width: 100%;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+`
+
 const ProjectBrief = styled.div`
   list-style: none;
   color: white;
@@ -258,6 +262,7 @@ const ProjectBrief = styled.div`
   }
   p {
     font-size: 1.6rem;
+    line-height: 2;
   }
 
   li {
@@ -271,6 +276,7 @@ const ProjectBrief = styled.div`
 const ProjectToDo = styled.div`
   list-style: none;
   color: white;
+  width: 100%;
 
   li {
     display: flex;
@@ -283,7 +289,8 @@ const ProjectToDo = styled.div`
   }
   p {
     font-size: 1.6rem;
-    margin-left: 1.6rem;
+    margin-left: 1rem;
+    line-height: 1.8;
   }
 `
 
@@ -301,20 +308,20 @@ const DoneList = styled.ul`
   width: 100%;
 
   span {
-    color: forestgreen;
+    color: ${colors.compBlue};
     text-decoration: line-through;
 
     p {
-      color: forestgreen;
+      color: ${colors.compBlue};
       font-size: 1.6rem;
-      margin-left: 1.6rem;
+      margin-left: 1rem;
       font-weight: bold;
     }
   }
 `
 
 const ProjectIconsDiv = styled.div`
-  grid-area: icons;
+  grid-area: footer;
   place-self: end start;
   width: 100%;
 `

@@ -19,14 +19,11 @@ function SpecialButton({
       rel={link[1] ?? 'blank'}
       target={link[2] ?? 'noopener noreferrer'}
       color={tColor}
-      HtColor={HtColor}
+      htColor={HtColor}
       border={border}
       bgColor={bgColor}
     >
       {children && children}
-      <p color={tColor} hoverColor={HtColor}>
-        {text}
-      </p>
     </Container>
   )
 }
@@ -48,19 +45,6 @@ const Container = styled.a`
     font-size: 2rem;
     color: ${(props) => (props.color ? props.color : colors.white)};
     margin-left: 1.5rem;
-  }
-  :hover,
-  :active {
-    ${
-      '' /* background: ${(props) =>
-      props.hBgColor ? `${props.hBgColor}` : `${colors.primary}`}; */
-    }
-
-    ${
-      '' /* > * {
-      color: ${(props) => (props.HtColor ? props.HtColor : colors.primary)};
-    } */
-    }
   }
 
   :hover {

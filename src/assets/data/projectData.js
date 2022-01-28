@@ -1,13 +1,13 @@
 const data = [
   {
     id: '1',
-    title: 'FaceBook Clone',
+    title: 'Facebook Clone',
+    status: 'Deployed MVP',
+    quick: ['Sign in with real Facebook credentials.', 'Post updates and images'],
     desc: [
-      'This started out as youtube tutorial for an introduction to Next JS and Tailwind CSS',
-      'But it was about 7 months old and both Next JS and Firebase had was a great project for me because X, Y and Z',
-      'THis was a great project for me because X, Y and Z',
-      'THis was a great project for me because X, Y and Z',
-      'THis was a great project for me because X, Y and Z',
+      'I found a Youtube tutorial that for an intro to Next JS and Tailwind CSS. But it was 8 months old and Next JS and Firebase had breaking syntax changes.',
+      'Rather than revert to an earlier version of those packages, I set myself the challenge to find the answer in the docs.',
+      'It took a few hours of trawling, but it was very rewarding to figure out!',
     ],
     next: [],
     icons: ['React', 'Bootstrap', 'Tailwind CSS', 'Next JS', 'Firebase'],
@@ -16,17 +16,14 @@ const data = [
     git: 'https://github.com/DarranOS/memory-card',
     deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
     improv: ['Used redux to manage state'],
-    todo: [
-      'Add mount/unmount animations',
-      'Add spinning card effect',
-      'Improve UI for interaction',
-      'Replace default React Favicon and title',
-    ],
-    done: ['Make responsive', 'Correct Typos'],
+    todo: ['Fix upload syntax'],
+    done: ['Make responsive'],
   },
   {
     id: '2',
     title: 'Battleships',
+    status: 'Deployed MP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
     desc: [
       'This started out as youtube tutorial for an introduction to Next JS and Tailwind CSS',
       'But it was about 7 months old and both Next JS and Firebase had was a great project for me because X, Y and Z',
@@ -51,6 +48,8 @@ const data = [
   {
     id: '3',
     title: 'Borg Crush',
+    status: 'Deployed MVP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
     desc: [
       'This started out as youtube tutorial for an introduction to Next JS and Tailwind CSS',
       'But it was about 7 months old and both Next JS and Firebase had was a great project for me because X, Y and Z',
@@ -74,6 +73,8 @@ const data = [
   {
     id: '4',
     title: 'Bolas ',
+    status: 'Deployed MVP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
     desc: [
       'This started out as youtube tutorial for an introduction to Next JS and Tailwind CSS',
       'But it was about 7 months old and both Next JS and Firebase had was a great project for me because X, Y and Z',
@@ -93,38 +94,16 @@ const data = [
     ],
     done: ['Make responsive', 'Correct Typos'],
   },
-
   {
     id: '5',
-    title: 'Facebook Clone',
-    desc: [
-      'Completely Repsonsive Firebase Storage Next Js server-side rendering Next Authentification so anyone can log in with their Facebook account Tailwind',
-      'THis was a great project for me because X, Y and Z',
-      'THis was a great project for me because X, Y and Z',
-    ],
-    icons: ['Tailwind CSS', 'Bootstrap'],
-
-    img: '/images/facebook_800.webp',
-    url: '/projects-5',
-    git: 'https://github.com/DarranOS/memory-card',
-    deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
-    improv: ['Used redux to manage state'],
-    todo: [
-      'Add mount/unmount animations',
-      'Add spinning card effect',
-      'Improve UI for interaction',
-      'Replace default React Favicon and title',
-    ],
-    done: ['Make responsive', 'Correct Typos'],
-  },
-  {
-    id: '6',
     title: 'Github Finder',
+    status: 'Deployed MVP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
     desc: [
       "This is a straight-forward tutorial from Udemy. I haven't changed anything yet.",
       "This project was a deeper dive into React's useContext API and",
     ],
-    icons: ['React', 'Tailwind CSS', 'DaisyUI', 'Github API', 'Axios', 'Postman'],
+    icons: ['React', 'Tailwind CSS', 'Postman'],
 
     img: '/images/bolas_800.webp',
     url: '/projects-5',
@@ -140,8 +119,32 @@ const data = [
     done: ['Make responsive', 'Correct Typos'],
   },
   {
-    id: '7',
+    id: '6',
     title: 'Apotheosis',
+    status: 'Deployed MVP',
+    quick: ['Blog powdered by Sanity CMS.', 'Optimised up with Next.js'],
+
+    desc: [
+      'Uses typescript for reduced bugs.',
+      'Fetches and generates dynamic pages.',
+      'Styled with Tailwind CSS',
+      'Incremental static regeneration and page caching with Next.js',
+    ],
+    icons: ['Typescript', 'Next JS', 'Tailwind CSS', 'Sanity CMS'],
+
+    img: '/images/apotheosis_800.webp',
+    url: '/projects-5',
+    git: 'https://github.com/DarranOS/apotheosis',
+    deploy: 'https://apotheosis.vercel.app/',
+    improv: ['Used redux to manage state'],
+    todo: ['Replace default React Favicon and title'],
+    done: ['Make responsive', 'Correct Typos'],
+  },
+  {
+    id: '7',
+    title: 'Library',
+    status: 'Deployed MVP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
     desc: [
       "This is a straight-forward tutorial from Udemy. I haven't changed anything yet.",
       'Dynamic',
@@ -149,7 +152,7 @@ const data = [
     ],
     icons: ['Next JS', 'Tailwind CSS', 'Sanity CMS', 'Github API', 'Axios', 'Postman'],
 
-    img: '/images/apotheosis_800.webp',
+    img: '/images/library_800.webp',
     url: '/projects-5',
     git: 'https://github.com/DarranOS/apotheosis',
     deploy: 'https://apotheosis.vercel.app/',
@@ -163,8 +166,10 @@ const data = [
     done: ['Make responsive', 'Correct Typos'],
   },
   {
-    id: '8',
-    title: 'Library',
+    id: '7',
+    title: 'Overleigh',
+    status: 'Deployed MVP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
     desc: [
       "This is a straight-forward tutorial from Udemy. I haven't changed anything yet.",
       'Dynamic',
@@ -172,10 +177,10 @@ const data = [
     ],
     icons: ['Next JS', 'Tailwind CSS', 'Sanity CMS', 'Github API', 'Axios', 'Postman'],
 
-    img: '/images/library_800.webp',
+    img: '/images/overleigh_800.webp',
     url: '/projects-5',
-    git: 'https://github.com/DarranOS/apotheosis',
-    deploy: 'https://apotheosis.vercel.app/',
+    git: 'https://www.overleighatchester.co.uk',
+    deploy: 'https://www.overleighatchester.co.uk/',
     improv: ['Used redux to manage state'],
     todo: [
       'Add mount/unmount animations',

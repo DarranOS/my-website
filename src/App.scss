@@ -22,6 +22,29 @@ body {
   overflow-x: hidden;
   color: #393c41;
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 1rem;
+
+    &-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(55deg, hsl(213, 100%, 90%) 0%, hsl(32, 0%, 100%) 20%);
+      margin-block: 1rem;
+      border-radius: 100vw;
+    }
+
+    &-thumb {
+      background-color: white;
+      cursor: pointer;
+      padding: 3px;
+      border-radius: 100vw;
+      border: 0.2rem solid orange;
+
+      &:hover {
+        background-color: #ff8c00;
+      }
+    }
+  }
 }
 
 a {
@@ -34,37 +57,22 @@ html {
 }
 
 h1 {
-  font-size: 12rem;
   font-family: 'BasementGrotesque';
   text-transform: uppercase;
-  letter-spacing: 5px;
-  line-height: 6rem;
 }
 
 h2 {
-  font-size: 6rem;
   font-family: 'BasementGrotesque';
   text-transform: uppercase;
-  transform: translateY(1rem);
 }
-
-/* h2::before {
-  margin-top: -3rem;
-} */
 
 h3 {
   font-size: 5rem;
   font-family: 'BasementGrotesque';
   text-transform: uppercase;
   display: inline-block;
-  letter-spacing: 0.5rem;
-
   transition: all 0.2s;
   text-align: center;
-
-  @media (min-wdith: 600) {
-    font-size: 4rem;
-  }
 }
 
 h3:hover {
@@ -93,6 +101,7 @@ p::selection {
   font-size: 1.9;
 }
 
-P:not(:last-child) {
-  margin-bottom: 3rem;
-}
+// Small 576
+// med 768
+// large 992
+// exlarge 1200

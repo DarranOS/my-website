@@ -48,17 +48,17 @@ const ViewProjects = () => {
       </Heading>
       <MainContainer>
         <ProjectBox>
-          <Link to={data[1].url}>
+          <Link to={data[0].url}>
             <Frame src={data[1].img} />
           </Link>
         </ProjectBox>
         <ProjectBox>
-          <Link to={data[2].url}>
+          <Link to={data[0].url}>
             <Frame src={data[2].img} />
           </Link>{' '}
         </ProjectBox>
         <ProjectBox>
-          <Link to={data[3].url}>
+          <Link to={data[0].url}>
             <Frame src={data[3].img} />
           </Link>{' '}
         </ProjectBox>

@@ -6,7 +6,7 @@ import gradient from '../styles/gradients'
 
 const Welcome = () => {
   return (
-    <Wrap zIndex={1000}>
+    <Wrap>
       <Background clip={ClipPaths.hero}>
         <BackOverlay
           opacity={0.9}
@@ -19,8 +19,11 @@ const Welcome = () => {
           )}
         ></BackOverlay>
         <BgImgContainer opacity={0.8} mixMode="multiply">
-          <img src="/images/lucky2.jpg" alt="" />
+          <img src="/images/HeroDrink.webp" alt="" />
         </BgImgContainer>
+        <BgImgContainerDesktop opacity={0.8} mixMode="multiply">
+          <img src="/images/lucky2.jpg" alt="" />
+        </BgImgContainerDesktop>
       </Background>
 
       <CentralDiv>
@@ -35,9 +38,9 @@ const Welcome = () => {
         </div>
         <div>
           <HeadingContainer3>
-            <h2>Nerd</h2>
-            <h2>Fullstack Dev</h2>
             <h2>Designer</h2>
+            <h2>Fullstack</h2>
+            <h2>Developer</h2>
           </HeadingContainer3>
         </div>
       </CentralDiv>
@@ -54,17 +57,9 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: ${(props) => props.zIndex};
+  width: 100%;
 
-  overflow: hidden;
-
-  :not(:first-child) {
-    margin-top: 15rem;
-  }
-
-  :not(:last-child) {
-    margin-bottom: 15rem;
-  }
+  overflow-x: hidden;
 `
 
 const Background = styled.div`
@@ -93,12 +88,14 @@ const BgImgContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0px;
-  right: -900px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+
   mix-blend-mode: ${(props) => props.mixMode};
 
-  @media (min-width: 668px) {
-    right: 0;
+  @media (min-width: 768px) {
+    display: none;
   }
 
   img {
@@ -107,30 +104,69 @@ const BgImgContainer = styled.div`
     object-fit: cover;
   }
 `
+const BgImgContainerDesktop = styled.div`
+  display: none;
+  opacity: ${(props) => props.opacity};
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  mix-blend-mode: ${(props) => props.mixMode};
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    right: -20vw;
+
+    img {
+    }
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+  }
+`
 
 const CentralDiv = styled.div`
   height: 100vh;
   width: 100%;
-  padding: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 
-  @media (min-width: 668px) {
+  @media (min-width: 768px) {
     justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 1200px) {
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 40%;
   }
 `
 
 const HeadingContainer1 = styled.div`
   color: white;
   display: flex;
+  justify-content: center;
 
-  @media (min-width: 668px) {
-    justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   h1 {
-    font-size: 16.5vw;
+    font-size: 15vw;
+    letter-spacing: -0.5vw;
     line-height: 1.2;
     position: relative;
     animation: 0.5s ${Animations.fadeInRight} ease-in-out;
@@ -138,20 +174,48 @@ const HeadingContainer1 = styled.div`
     webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
     animation-delay: 0.2s;
+
+    ::first-letter {
+      letter-spacing: -2vw;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 10vw;
+      letter-spacing: -0.2vw;
+      ::first-letter {
+        letter-spacing: -0.4vw;
+      }
+    }
+    @media (min-width: 992px) {
+      font-size: 8vw;
+      letter-spacing: -0.2vw;
+      ::first-letter {
+        letter-spacing: -0.4vw;
+      }
+    }
+    @media (min-width: 1200px) {
+      font-size: 6vw;
+      letter-spacing: -0.2vw;
+      ::first-letter {
+        letter-spacing: -0.4vw;
+      }
+    }
   }
 `
 
 const HeadingContainer2 = styled.div`
   color: white;
+  display: flex;
   margin-bottom: 2vh;
+  justify-content: center;
 
-  @media (min-width: 668px) {
+  @media (min-width: 1200px) {
     justify-content: center;
   }
 
   h1 {
-    font-size: 18.5vw;
-
+    font-size: 20vw;
+    letter-spacing: -1.25vw;
     line-height: 0.7;
     color: ${(props) => props.color};
     position: relative;
@@ -160,35 +224,82 @@ const HeadingContainer2 = styled.div`
     webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
     animation-delay: 0.4s;
+
+    @media (min-width: 768px) {
+      font-size: 12vw;
+      letter-spacing: -0.2vw;
+      ::first-letter {
+        letter-spacing: -0.4vw;
+      }
+    }
+    @media (min-width: 992px) {
+      font-size: 10vw;
+      letter-spacing: -0.2vw;
+      ::first-letter {
+        letter-spacing: -0.4vw;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 7vw;
+      align-items: flex-start;
+      letter-spacing: -0.2vw;
+      ::first-letter {
+        letter-spacing: -0.4vw;
+      }
+    }
   }
 `
 
 const HeadingContainer3 = styled.div`
   color: ${(props) => props.color};
-  width: 100%;
-  text-align: center;
   display: flex;
   flex-direction: column;
+  padding-bottom: 10vh;
 
-  @media (min-width: 667px) {
+  @media (min-width: 768px) {
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1200px) {
+    justify-content: center;
+    align-items: flex-start;
     margin-bottom: 0;
   }
 
   h2 {
+    width: min-content;
     font-size: 8vw;
-    line-height: 1.4;
-    width: max-content;
+    line-height: 0.1;
+    padding: 2rem 0 1.3rem 0;
     color: ${colors.compBlue2};
     animation: 0.5s ${Animations.moveUpBottom} ease-in-out;
     animation-iteration-count: 1;
     webkit-animation-fill-mode: backwards;
     animation-fill-mode: backwards;
     animation-delay: 0.6s;
+    background: ${colors.white};
+    margin: 0.4vh 0;
 
-    @media (min-width: 667px) {
-      font-size: 5.3vw;
+    @media (min-width: 768px) {
+      font-size: 6.6vw;
+      justify-content: center;
+      padding: 3.2rem 0 2rem 0;
+      background: ${colors.white};
+    }
+    @media (min-width: 992px) {
+      font-size: 4.6vw;
+      justify-content: center;
+      padding: 3.2rem 0 2rem 0;
+      background: ${colors.white};
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 2.6vw;
+      padding: 3.2rem 0 2rem 0;
+      justify-content: center;
+      background: ${colors.white};
     }
   }
 

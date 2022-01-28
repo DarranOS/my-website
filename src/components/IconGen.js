@@ -305,7 +305,11 @@ function IconGen({ icon, color, size, hoverColor }) {
       )
 
     default:
-      return <p>Error</p>
+      return (
+        <Logo size={size} color="transparent" hoverColor={hoverColor}>
+          <DatabaseFeather />
+        </Logo>
+      )
   }
 }
 

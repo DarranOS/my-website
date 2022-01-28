@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import colors from '../styles/Colors'
 import menuData from '../assets/data/menuData'
 import Animations from '../styles/Animations'
+import { Link } from 'react-router-dom'
 
 function NavButton() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -23,9 +24,9 @@ function NavButton() {
             {menuData.map((data) => (
               <li key={data.id}>
                 <MenuItem>
-                  <a>
+                  <Link to={data.url} onClick={toggleMenu}>
                     <span>0{data.id}</span> {data.title}
-                  </a>
+                  </Link>
                 </MenuItem>
               </li>
             ))}
@@ -50,8 +51,8 @@ const Container = styled.div`
 
 const Button = styled.button`
   position: fixed;
-  top: 3%;
-  right: 5%;
+  bottom: 2vh;
+  right: 3vh;
   z-index: 1000;
   background: white;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
@@ -65,10 +66,18 @@ const Button = styled.button`
   align-items: center;
   cursor: pointer;
 
+  @media (min-width: 992px) {
+    bottom: 4vh;
+    right: 4vh;
+    width: 8rem;
+    height: 8rem;
+    border: 2px solid ${colors.compBlue};
+  }
+
   span {
     width: 3rem;
     height: 3px;
-    background: ${(props) => (props.active ? 'transparent' : `${colors.primary}`)};
+    background: ${(props) => (props.active ? 'transparent' : `${colors.compBlue}`)};
     display: inline-block;
     position: relative;
 
@@ -80,7 +89,7 @@ const Button = styled.button`
       height: 3px;
       display: inline-block;
       transition: all 0.2s;
-      background: ${colors.primary};
+      background: ${colors.compBlue};
     }
     ::before {
       top: ${(props) => (props.active ? '0' : '-.8rem')};
@@ -109,18 +118,19 @@ const Button = styled.button`
 
 const Background = styled.div`
   transform: ${(props) => props.scale};
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   position: fixed;
   z-index: 500;
   top: 0;
+  left: 0;
+  bottom: 0;
   right: 0;
-  background: ${colors.grad3};
+  background: ${colors.grDarkOrange};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 3s;
 `
 
 const MenuList = styled.div`
@@ -131,20 +141,25 @@ const MenuList = styled.div`
 `
 
 const MenuItem = styled.div`
-  margin: 1rem;
+  margin: 0.5rem;
 
   a,
   a:link,
   a:visited {
     font-family: 'BasementGrotesque';
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.2rem;
     display: inline-block;
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: 300;
     color: white;
     padding: 1rem 2rem;
     text-transform: uppercase;
-    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      ${colors.compBlue2} 50%
+    );
     background-size: 240%;
     transition: all 0.2s;
 
@@ -163,7 +178,7 @@ const MenuItem = styled.div`
   a:hover,
   a:active {
     background-position: 100%;
-    color: ${colors.primary};
+    color: ${colors.white};
     transform: translateX(1rem);
   }
 `
