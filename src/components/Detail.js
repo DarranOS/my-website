@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import colors from '../styles/Colors'
 import ProjectIcons from './ProjectIcons'
@@ -30,13 +30,19 @@ const Detail = ({ info }) => {
           </Link>
           <SpecialButton
             link={[info.git]}
-            text="Repo"
+            text={info.git ? 'Repo' : 'NA'}
+            disabled={!info.git}
             tColor={colors.white}
             bgColor="transparent"
-            border="2px solid white"
+            border={info.git ? '2px solid white' : '2px solid grey'}
           >
-            <IconGen icon="Github" color="white" size="3rem" hovercolor="white" />
-            <p>Repo</p>
+            <IconGen
+              icon="Github"
+              color={info.git ? 'white' : 'grey'}
+              size="3rem"
+              hovercolor="white"
+            />
+            {info.git ? <p>Repo</p> : <p style={{ color: 'grey' }}>NA</p>}
           </SpecialButton>
           <SpecialButton
             link={[info.deploy]}
@@ -223,7 +229,6 @@ const QuickNotes = styled.div`
   margin-bottom: 2vh;
 
   @media (min-width: 1200px) {
-    border-top: 1px solid white;
   }
 
   li {

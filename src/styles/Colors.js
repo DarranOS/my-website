@@ -9,7 +9,7 @@ const colors = {
   orangeBrown: '#432906',
   compBlue: '#0073ff',
   compBlue2: '#327bd7',
-  compBlue2Fade: 'rgba(50, 123, 215,.85)',
+  compBlue2Fade: 'rgba(50, 123, 215,.75)',
 
   white: '#fff',
   grey1: '#111',
@@ -36,7 +36,7 @@ const colors = {
     'linear-gradient(105deg, hsl(54, 90%, 50%) 0%, hsl(27, 87%, 50%) 30%, hsl(27, 87%, 50%) 70%, hsl(54, 90%, 50%) 100%)',
 
   grLightOrange: 'linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)',
-  grDarkOrange: 'linear-gradient(220.55deg, #FFC328 0%, #E25500 100%)',
+  grDarkOrange: 'linear-gradient(220.55deg, #FFC328 0%, #E87500 100%)',
   grSoftOrange: 'linear-gradient(220.55deg, #FFF500 0%, #FFB800 100%)',
   grad9:
     'linear-gradient(55deg, rgb(0,0,0) 0%, rgb(0,0,0) 45%, rgb(40,40,40) 50%, rgb(40,40,40) 55%, rgb(0,0,0) 60%, rgb(0,0,0) 100%)',
@@ -44,6 +44,8 @@ const colors = {
     'linear-gradient(55deg, #0073ff 0%, #479aff 25%, #0073ff 50%, #479aff 75%, #0073ff 100%)',
   gradBlueOrange:
     'linear-gradient(55deg, 	hsl(213, 100%, 50%) 0%,  	hsl(32, 99%, 56%) 100%)',
+  gradBlueFade:
+    'linear-gradient(55deg, 	rgba(50, 123, 215,.85) 0% ,  rgba(50, 123, 215,0) 50%,	rgba(50, 123, 215,0) 100%)',
 }
 
 export default colors

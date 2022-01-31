@@ -43,6 +43,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  display: none;
 
   div {
     font-size: 2rem;
@@ -53,7 +54,7 @@ const Button = styled.button`
   position: fixed;
   bottom: 2vh;
   right: 3vh;
-  z-index: 1000;
+  z-index: 100;
   background: white;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
   border-radius: 50%;

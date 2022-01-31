@@ -59,6 +59,7 @@ const AboutMe = () => {
             </em>{' '}
             career.
           </p>
+          <TextLink href="https://github.com/DarranOS">github.com/DarranOS</TextLink>
         </TextBox>
         <ButtonsContainer>
           {/* <SecondaryButton
@@ -98,10 +99,10 @@ const Container = styled.div`
     'pic'
     'bio';
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     display: grid;
     margin-top: 0;
-    padding: 10vh 15vw;
+    padding: 10vh 15vw 0 15vw;
     grid:
       'heading heading'
       'bio pic';
@@ -226,6 +227,10 @@ const TextBox = styled.div`
     color: ${colors.darkOrange};
     font-size: 1.8rem;
     margin-bottom: 1.5vh;
+    background-image: linear-gradient(to right, #fec922, #fe9622);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 
     ::selection {
       background: ${colors.compBlue};
@@ -271,7 +276,16 @@ const TextBox = styled.div`
   }
 `
 
-const ButtonsContainer = styled.div`
+const TextLink = styled.a`
+  background-image: linear-gradient(to right, #fea922, #fe9622);
+  filter: drop-shadow(0 0px 1px rgba(0, 0, 0, 0.2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 1.8rem;
+`
+
+const ButtonsContainer = styled.a`
   margin-top: 10vh;
   display: flex;
   justify-content: space-between;

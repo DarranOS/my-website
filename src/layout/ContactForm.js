@@ -35,12 +35,14 @@ function ContactForm({ width }) {
   const message = watch('message') || ''
   const messageCharsLeft = 1200 - message.length
 
+  console.log(width)
+
   return (
     <Container width={width}>
       {submitted ? (
         <FormSubmitted>
-          <p>Thank you for reaching out to me. </p>
-          <p>I'll get back to you as soon as I can.</p>
+          <p>Thank you for reaching out. </p>
+          <p> I'll get back to you asap.</p>
         </FormSubmitted>
       ) : (
         <>
@@ -92,14 +94,17 @@ const Container = styled.div`
   align-items: center;
   border-radius: 4px;
   padding-bottom: 4vh;
-  width: ${(props) => props.width};
-  ${'' /* background: rgba(255, 255, 255, 0.25); */}
+  max-width: ${(props) => props.width};
 
   p {
     font-size: 1.4rem;
     padding-left: 1vh;
     color: white;
     filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.4));
+
+    @media (min-width: 1200px) {
+      font-size: 1.4rem;
+    }
   }
   form {
     width: 100%;
@@ -110,9 +115,9 @@ const Container = styled.div`
       width: 100%;
       font-family: inherit;
       font-size: 1.6rem;
-      color: inherit;
-      padding: 0.75rem 1rem;
-      border-radius: 2px;
+      color: #393c41;
+      padding: 1.2rem 1rem;
+      border-radius: 8px;
       background: rbga(255, 255, 255, 0.5);
       border: none;
       border-bottom: 3px solid transparent;
@@ -141,11 +146,12 @@ const Container = styled.div`
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
-    border-radius: 4px;
+    border-radius: 8px;
     text-transform: uppercase;
     font-size: 1.8rem;
     border: 3px solid transparent;
     font-size: 2rem;
+    border: 2px solid white;
 
     :disabled {
       background: lightgrey;
@@ -174,15 +180,23 @@ const Container = styled.div`
 
 const FormSubmitted = styled.div`
   margin: 0.5vh 0;
-  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-right: 20%;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  background: ${colors.grLightOrange};
+  padding: 5%;
+  border: 2px solid white;
+  border-radius: 8px;
+
+  @media (min-width: 992px) {
+    align-items: flex-start;
+  }
 
   p {
     font-size: 2rem;
-    margin: 0;
+    margin: 0.75rem;
     padding: 0;
     line-height: 2;
   }

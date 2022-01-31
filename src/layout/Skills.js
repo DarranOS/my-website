@@ -159,33 +159,33 @@ const Skills = () => {
 
       <Contact>
         <h3>Get In Touch!</h3>
-        <p>I'd love to here from you.</p>
+        <p>I'd love to hear from you.</p>
         <ContactIcons>
           <a href="tel:07456638412">
             <ContactIcon>
               <IconHolder>
-                <IconGen icon="Phone" size="48px" color="white" />
+                <IconGen icon="Phone" size="36px" color="white" />
               </IconHolder>
               <div>
-                <p>Call Me</p>
+                <p>Call</p>
               </div>
             </ContactIcon>
           </a>
           <a href="mailto:darranoshea@gmail.com">
             <ContactIcon>
               <IconHolder>
-                <IconGen icon="Email" size="48px" color="white" />
+                <IconGen icon="Email" size="36px" color="white" />
               </IconHolder>
               <div>
-                <p>Email Me</p>
+                <p>Email</p>
               </div>
             </ContactIcon>
           </a>
         </ContactIcons>
 
-        <div>
+        <ContactFormDiv>
           <ContactForm width={'100%'} />
-        </div>
+        </ContactFormDiv>
       </Contact>
     </Container>
   )
@@ -198,7 +198,7 @@ const Container = styled.div`
   min-height: 70vh;
   display: flex;
   flex-direction: column;
-  overflowx: hidden;
+  overflow-x: hidden;
   width: 100%;
   padding: 15vh 5vw;
   min-height: 100vh;
@@ -206,24 +206,30 @@ const Container = styled.div`
   clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
 
   @media (min-width: 1200px) {
-    margin-top: 12vh;
+    margin-top: 0vh;
     display: flex;
     flex-direction: column;
     padding: 0vh 15vw;
     clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 100%);
-    padding-top: 8vh;
+    padding-top: 20vh;
   }
 `
 
 const Contact = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   z-index: 100;
   margin-top: 8vh;
   margin-bottom: 6vh;
   color: white;
+
+  @media (min-width: 992px) {
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    align-items: flex-start;
+  }
 
   h3 {
     font-size: 4rem;
@@ -237,7 +243,7 @@ const Contact = styled.div`
     width: 100%;
 
     @media (min-width: 992px) {
-      width: 70%;
+      ${'' /* width: 70%; */}
     }
   }
 
@@ -261,6 +267,7 @@ const Heading = styled.div`
 
   @media (min-width: 1200px) {
     margin-bottom: 4vh;
+    margin-top: 12vh;
   }
 
   h3 {
@@ -292,7 +299,7 @@ const TextTitle = styled.div`
 const TextGrid = styled.div`
   @media (min-width: 1200px) {
     display: grid;
-    margin-bottom: 30vh;
+    margin-bottom: 10vh;
   }
 `
 const TextContainer = styled.div`
@@ -388,33 +395,45 @@ const TextBox = styled.div`
   }
 `
 
+const ContactFormDiv = styled.div`
+  @media (min-width: 992px) {
+    max-width: 70%;
+  }
+`
+
 const ContactIcons = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1vh;
+  margin-bottom: 4vh;
+  margin-top: 4vh;
   width: 100%;
 
+  @media (min-width: 922px) {
+    max-width: 35%;
+  }
+
   a {
-    width: 48%;
+    width: 46%;
   }
 `
 
 const ContactIcon = styled.div`
   background: ${colors.compBlue};
   color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   margin: 1vh 0;
   display: flex;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  border: 2px solid white;
 
   div {
   }
 
   p {
-    margin-left: 5vw;
-    font-size: 1.6rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
     letter-spacing: 0.2rem;
     font-family: 'BasementGrotesque';
     text-transform: uppercase;
@@ -422,5 +441,5 @@ const ContactIcon = styled.div`
 `
 
 const IconHolder = styled.div`
-  max-width: 48px;
+  max-width: 36px;
 `

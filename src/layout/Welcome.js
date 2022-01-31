@@ -9,7 +9,7 @@ const Welcome = () => {
     <Wrap>
       <Background clip={ClipPaths.hero}>
         <BackOverlay
-          opacity={0.9}
+          opacity={1}
           color={gradient(
             'linear',
             `${colors.primary}`,
@@ -21,8 +21,8 @@ const Welcome = () => {
         <BgImgContainer opacity={0.8} mixMode="multiply">
           <img src="/images/HeroDrink.webp" alt="" />
         </BgImgContainer>
-        <BgImgContainerDesktop opacity={0.8} mixMode="multiply">
-          <img src="/images/lucky2.jpg" alt="" />
+        <BgImgContainerDesktop opacity={1} mixMode="multiply">
+          <img src="/images/lucky2.webp" alt="" />
         </BgImgContainerDesktop>
       </Background>
 
@@ -58,6 +58,7 @@ const Wrap = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
+  z-index: 100;
 
   overflow-x: hidden;
 `
@@ -114,21 +115,18 @@ const BgImgContainerDesktop = styled.div`
   bottom: 0px;
   mix-blend-mode: ${(props) => props.mixMode};
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   @media (min-width: 768px) {
     display: flex;
-    right: -20vw;
+    right: 30px;
+  }
+  @media (min-width: 992px) {
+    display: flex;
+    right: 0;
 
     img {
+      width: 100%;
+      object-fit: cover;
     }
-  }
-  @media (min-width: 1200px) {
-    display: flex;
   }
 `
 
@@ -146,7 +144,8 @@ const CentralDiv = styled.div`
     align-items: center;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
+    margin-top: 0;
     justify-content: center;
     align-items: flex-start;
     padding-left: 40%;
@@ -160,7 +159,7 @@ const HeadingContainer1 = styled.div`
 
   align-items: center;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     justify-content: flex-start;
     align-items: flex-start;
   }
@@ -188,14 +187,14 @@ const HeadingContainer1 = styled.div`
       }
     }
     @media (min-width: 992px) {
-      font-size: 8vw;
+      font-size: 8.6vw;
       letter-spacing: -0.2vw;
       ::first-letter {
         letter-spacing: -0.4vw;
       }
     }
     @media (min-width: 1200px) {
-      font-size: 6vw;
+      font-size: 6.5vw;
       letter-spacing: -0.2vw;
       ::first-letter {
         letter-spacing: -0.4vw;
@@ -210,7 +209,7 @@ const HeadingContainer2 = styled.div`
   margin-bottom: 2vh;
   justify-content: center;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     justify-content: center;
   }
 
@@ -234,7 +233,7 @@ const HeadingContainer2 = styled.div`
       }
     }
     @media (min-width: 992px) {
-      font-size: 10vw;
+      font-size: 9.8vw;
       letter-spacing: -0.2vw;
       ::first-letter {
         letter-spacing: -0.4vw;
@@ -242,7 +241,7 @@ const HeadingContainer2 = styled.div`
     }
 
     @media (min-width: 1200px) {
-      font-size: 7vw;
+      font-size: 7.5vw;
       align-items: flex-start;
       letter-spacing: -0.2vw;
       ::first-letter {
@@ -262,11 +261,13 @@ const HeadingContainer3 = styled.div`
 
   @media (min-width: 768px) {
     align-items: center;
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  @media (min-width: 1200px) {
+
+  @media (min-width: 992px) {
     align-items: flex-start;
-    margin-bottom: 0;
+    padding-bottom: 0;
+    flex-direction: row;
   }
 
   h2 {
@@ -290,17 +291,14 @@ const HeadingContainer3 = styled.div`
       background: ${colors.white};
     }
     @media (min-width: 992px) {
-      font-size: 4.6vw;
+      font-size: 2.6vw;
+      padding: 1.6rem 0 1.2rem 0;
       justify-content: center;
-      padding: 3.2rem 0 2rem 0;
       background: ${colors.white};
     }
 
     @media (min-width: 1200px) {
-      font-size: 2.6vw;
-      padding: 3.2rem 0 2rem 0;
-      justify-content: center;
-      background: ${colors.white};
+      font-size: 1.6vw;
     }
   }
 
@@ -308,6 +306,13 @@ const HeadingContainer3 = styled.div`
     color: white;
     background: ${colors.compBlue2Fade};
     animation-delay: 0.8s;
+
+    @media (min-width: 1200px) {
+      color: ${colors.compBlue2Fade};
+      padding: 1.6rem 1rem 1.2rem 1rem;
+      justify-content: center;
+      background: ${colors.white};
+    }
   }
   h2:nth-child(3) {
     animation-delay: 1s;
