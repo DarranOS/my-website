@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import colors from '../styles/Colors'
-import IconGen from './IconGen'
 
 function SpecialButton({
   text,
