@@ -187,7 +187,7 @@ const HeadingContainer1 = styled.div`
       }
     }
     @media (min-width: 992px) {
-      font-size: 8.6vw;
+      font-size: 10.2vw;
       letter-spacing: -0.2vw;
       ::first-letter {
         letter-spacing: -0.4vw;
@@ -233,7 +233,7 @@ const HeadingContainer2 = styled.div`
       }
     }
     @media (min-width: 992px) {
-      font-size: 9.8vw;
+      font-size: 11.6vw;
       letter-spacing: -0.2vw;
       ::first-letter {
         letter-spacing: -0.4vw;
@@ -307,7 +307,7 @@ const HeadingContainer3 = styled.div`
     background: ${colors.compBlue2Fade};
     animation-delay: 0.8s;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       color: ${colors.compBlue2Fade};
       padding: 1.6rem 1rem 1.2rem 1rem;
       justify-content: center;

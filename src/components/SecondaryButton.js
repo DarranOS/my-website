@@ -8,40 +8,35 @@ function SecondaryButton({ text, color, background, flash, children, fullBorder 
       flash={flash}
       fullBorder={fullBorder}
     >
-      {text}
       {children}
+      {text}
     </ButtonStyle>
   )
 }
 
 const ButtonStyle = styled.div`
-   {
-    font-size: 1.6rem;
-    color: ${(props) => props.color};
-    display: inline-block;
-    border-color: ${(props) => props.color};
-    border-style: solid;
-    border-width: ${(props) => (props.fullBorder ? '2px' : '0 0 2px 0')};
-    padding: 1rem 2rem;
-    padding-right: 1.5rem;
-    ${
-      '' /* background: ${(props) => (props.background ? props.background : 'hotpink')}; */
-    }
-
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s;
-    position: relative;
-    background-image: ${(props) =>
-      props.background
-        ? `linear-gradient(
+  font-size: 1.6rem;
+  color: ${(props) => props.color};
+  display: flex;
+  align-items: center;
+  border-color: ${(props) => props.color};
+  border-style: solid;
+  border-width: ${(props) => (props.fullBorder ? '2px' : '0 0 2px 0')};
+  padding: 1rem 2rem;
+  padding-right: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.4s;
+  position: relative;
+  background-image: ${(props) =>
+    props.background
+      ? `linear-gradient(
       120deg,
       ${props.background}  0%,
       ${props.background}  50%,
       ${props.color} 50%)`
-        : 'yellow'};
-    background-size: 240%; 
-    
+      : 'yellow'};
+  background-size: 240%;
 
   :hover {
     ${'' /* background: ${(props) => props.color}; */}
@@ -52,11 +47,14 @@ const ButtonStyle = styled.div`
     background-position: 100%;
     border-color: ${(props) => props.background};
 
- ::after {
+    ::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
       background: ${(props) => (props.flash ? props.flash : 'green')};
-    
+    }
+
+    div:first-child {
+      color: ${(props) => props.background};
     }
   }
 
@@ -75,6 +73,10 @@ const ButtonStyle = styled.div`
     left: 0;
     z-index: 10;
     transition: all 0.4s;
+  }
+
+  div:first-child {
+    margin-right: 1.5rem;
   }
 `
 

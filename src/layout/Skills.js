@@ -1,7 +1,5 @@
-import React from 'react'
 import styled from 'styled-components'
 import IconGen from '../components/IconGen'
-import ContactForm from './ContactForm'
 import colors from '../styles/Colors'
 
 const Skills = () => {
@@ -156,37 +154,6 @@ const Skills = () => {
           </TextBoxes>
         </TextContainer>
       </TextGrid>
-
-      <Contact>
-        <h3>Get In Touch!</h3>
-        <p>I'd love to hear from you.</p>
-        <ContactIcons>
-          <a href="tel:07456638412">
-            <ContactIcon>
-              <IconHolder>
-                <IconGen icon="Phone" size="36px" color="white" />
-              </IconHolder>
-              <div>
-                <p>Call</p>
-              </div>
-            </ContactIcon>
-          </a>
-          <a href="mailto:darranoshea@gmail.com">
-            <ContactIcon>
-              <IconHolder>
-                <IconGen icon="Email" size="36px" color="white" />
-              </IconHolder>
-              <div>
-                <p>Email</p>
-              </div>
-            </ContactIcon>
-          </a>
-        </ContactIcons>
-
-        <ContactFormDiv>
-          <ContactForm width={'100%'} />
-        </ContactFormDiv>
-      </Contact>
     </Container>
   )
 }
@@ -203,15 +170,16 @@ const Container = styled.div`
   padding: 15vh 5vw;
   min-height: 100vh;
   background-image: linear-gradient(220.55deg, #ffc328 0%, #e25500 100%);
-  clip-path: polygon(0 3%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0% 100%);
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     margin-top: 0vh;
     display: flex;
     flex-direction: column;
     padding: 0vh 15vw;
-    clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0% 100%);
-    padding-top: 20vh;
+    clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
+    padding-top: 8vh;
+    padding-bottom: 8vh;
   }
 `
 
@@ -234,7 +202,7 @@ const Contact = styled.div`
   h3 {
     font-size: 4rem;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       margin-bottom: 4vh;
     }
   }
@@ -265,9 +233,10 @@ const Heading = styled.div`
   width: 100%;
   z-index: 100;
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     margin-bottom: 4vh;
-    margin-top: 12vh;
+    margin-top: 16vh;
+    width: 70%;
   }
 
   h3 {
@@ -275,7 +244,7 @@ const Heading = styled.div`
     color: white;
     text-align: left;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       padding-right: 0;
       width: 100%;
     }
@@ -292,12 +261,12 @@ const Heading = styled.div`
 `
 
 const TextTitle = styled.div`
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
   }
 `
 
 const TextGrid = styled.div`
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     display: grid;
     margin-bottom: 10vh;
   }
@@ -331,7 +300,7 @@ const TextContainer = styled.div`
       content: ' ';
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       color: white;
       font-size: 1.6rem;
       padding: 0.2rem 0.4rem;
@@ -345,7 +314,7 @@ const TextContainer = styled.div`
   }
 
   :not(:last-child) {
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       margin-bottom: 5vh;
     }
   }
@@ -368,7 +337,7 @@ const TextBox = styled.div`
     width: 33%;
     margin: 1.5vh 0;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     width: 25%;
     margin: 1.5vh 0;
   }
@@ -386,60 +355,60 @@ const TextBox = styled.div`
 
   p {
     line-height: 1.2;
-    margin-left: 4vw;
+    margin-left: 1rem;
     color: white;
 
-    @media (min-width: 1200px) {
-      margin-left: 0.5vw;
+    @media (min-width: 992px) {
+      margin-left: 1rem;
     }
   }
 `
 
-const ContactFormDiv = styled.div`
-  @media (min-width: 992px) {
-    max-width: 70%;
-  }
-`
+// const ContactFormDiv = styled.div`
+//   @media (min-width: 992px) {
+//     max-width: 70%;
+//   }
+// `
 
-const ContactIcons = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 4vh;
-  margin-top: 4vh;
-  width: 100%;
+// const ContactIcons = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   margin-bottom: 4vh;
+//   margin-top: 4vh;
+//   width: 100%;
 
-  @media (min-width: 922px) {
-    max-width: 35%;
-  }
+//   @media (min-width: 922px) {
+//     max-width: 35%;
+//   }
 
-  a {
-    width: 46%;
-  }
-`
+//   a {
+//     width: 46%;
+//   }
+// `
 
-const ContactIcon = styled.div`
-  background: ${colors.compBlue};
-  color: white;
-  border-radius: 8px;
-  margin: 1vh 0;
-  display: flex;
-  padding: 1rem 1rem;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white;
+// const ContactIcon = styled.div`
+//   background: ${colors.compBlue};
+//   color: white;
+//   border-radius: 8px;
+//   margin: 1vh 0;
+//   display: flex;
+//   padding: 1rem 1rem;
+//   align-items: center;
+//   justify-content: center;
+//   border: 2px solid white;
 
-  div {
-  }
+//   div {
+//   }
 
-  p {
-    margin-left: 1rem;
-    font-size: 1.2rem;
-    letter-spacing: 0.2rem;
-    font-family: 'BasementGrotesque';
-    text-transform: uppercase;
-  }
-`
+//   p {
+//     margin-left: 1rem;
+//     font-size: 1.2rem;
+//     letter-spacing: 0.2rem;
+//     font-family: 'BasementGrotesque';
+//     text-transform: uppercase;
+//   }
+// `
 
-const IconHolder = styled.div`
-  max-width: 36px;
-`
+// const IconHolder = styled.div`
+//   max-width: 36px;
+// `

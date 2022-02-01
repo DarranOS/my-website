@@ -92,14 +92,14 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
+
   padding-bottom: 4vh;
   max-width: ${(props) => props.width};
 
   p {
     font-size: 1.4rem;
     padding-left: 1vh;
-    color: white;
+    color: ${colors.compBlue};
     filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.4));
 
     @media (min-width: 1200px) {
@@ -124,7 +124,7 @@ const Container = styled.div`
       display: block;
       resize: vertical;
       outline: none;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1rem 2rem rgba(120, 80, 0, 0.2);
 
       :focus {
         ${'' /* box-shadow: 0 1rem 2rem rgba(234, 160, 2, 0.6); */}
@@ -145,13 +145,12 @@ const Container = styled.div`
     background: ${colors.compBlue};
     cursor: pointer;
     transition: all 0.2s;
-    font-weight: 500;
-    border-radius: 8px;
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 1.8rem;
     border: 3px solid transparent;
     font-size: 2rem;
-    border: 2px solid white;
+    border-radius: 0;
 
     :disabled {
       background: lightgrey;

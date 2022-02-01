@@ -62,12 +62,6 @@ const AboutMe = () => {
           <TextLink href="https://github.com/DarranOS">github.com/DarranOS</TextLink>
         </TextBox>
         <ButtonsContainer>
-          {/* <SecondaryButton
-            text={'My Github  >'}
-            color={colors.primary}
-            background={colors.white}
-            flash={colors.primary}
-          /> */}
           <Link to="/projects">
             <SecondaryButton
               text={'Check out my Projects  >'}
@@ -93,7 +87,7 @@ const Container = styled.div`
   grid-template-columns: 1fr;
   width: 100%;
   padding: 0vh 5vw;
-  min-height: 100vh;
+  ${'' /* min-height: 100vh; */}
   grid:
     'heading'
     'pic'
