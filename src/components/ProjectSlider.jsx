@@ -26,14 +26,6 @@ function ImgSlider() {
     <Container>
       <Heading>
         <HeadingLeft>
-          {/* <Buttons>
-            <IconGen
-              icon="ChevronThinLeft"
-              color="white"
-              size="5rem"
-              hovercolor="white"
-            />
-          </Buttons> */}
           <Title>
             <h2>Projects</h2>
             <p>Swipe Left or Right</p>

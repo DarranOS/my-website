@@ -183,51 +183,6 @@ const Container = styled.div`
   }
 `
 
-const Contact = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  z-index: 100;
-  margin-top: 8vh;
-  margin-bottom: 6vh;
-  color: white;
-
-  @media (min-width: 992px) {
-    margin-top: 0vh;
-    margin-bottom: 0vh;
-    align-items: flex-start;
-  }
-
-  h3 {
-    font-size: 4rem;
-
-    @media (min-width: 992px) {
-      margin-bottom: 4vh;
-    }
-  }
-
-  div {
-    width: 100%;
-
-    @media (min-width: 992px) {
-      ${'' /* width: 70%; */}
-    }
-  }
-
-  p {
-    font-size: 2rem;
-    margin: 0;
-    padding: 0;
-    line-height: 2;
-
-    a {
-      background: ${colors.compBlue};
-      color: white;
-    }
-  }
-`
-
 const Heading = styled.div`
   grid-area: heading;
   width: 100%;
