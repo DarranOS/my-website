@@ -19,11 +19,8 @@ const AboutMe = () => {
           <h4>A self-taught, Full-Stack developer</h4>
 
           <p>
-            I'm Darran. I used to be the{' '}
-            <em>
-              <span>senior operations manager</span>
-            </em>{' '}
-            for a small chain of independent bars and restaurants.
+            I'm Darran. I used to be the operations manager for a small chain of
+            independent bars and restaurants.
           </p>
           <p>
             In addition to the dayjob, I built Wordpress sites as a fun{' '}
@@ -44,9 +41,12 @@ const AboutMe = () => {
             I came across The Odin Project, a free structured online course, and got
             addicted.
           </p>
+          <TextLink href="https://www.theodinproject.com/about">
+            About The Odin Project
+          </TextLink>
           <p>
-            While furloughed, I founded myself excitedly coding 10+ hours a day, and knew
-            it was decision time! So.....
+            While furloughed, I found myself excitedly coding 10+ hours a day and knew it
+            was decision time! So.....
           </p>
           <p>
             <span>I took the plunge and left hospitality</span>
@@ -277,6 +277,8 @@ const TextLink = styled.a`
   background-clip: text;
   color: transparent;
   font-size: 1.8rem;
+  display: block;
+  margin-block: 1vh;
 `
 
 const ButtonsContainer = styled.a`
