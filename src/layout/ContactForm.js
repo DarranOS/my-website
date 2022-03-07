@@ -33,7 +33,7 @@ function ContactForm({ width }) {
   }
 
   const message = watch('message') || ''
-  const messageCharsLeft = 1200 - message.length
+  const messageCharsLeft = 800 - message.length
 
   console.log(width)
 
@@ -66,8 +66,8 @@ function ContactForm({ width }) {
               {...register('message', { required: true })}
               name="message"
               placeholder="Message"
-              maxLength="1200"
-              rows="8"
+              maxLength="800"
+              rows="6"
             />
             <p>{messageCharsLeft} characters left</p>
             <br />
@@ -99,7 +99,7 @@ const Container = styled.div`
   p {
     font-size: 1.4rem;
     padding-left: 1vh;
-    color: ${colors.compBlue};
+    color: ${colors.white};
     filter: drop-shadow(0 1rem 2rem rgba(0, 0, 0, 0.4));
 
     @media (min-width: 1200px) {
@@ -117,7 +117,6 @@ const Container = styled.div`
       font-size: 1.6rem;
       color: #393c41;
       padding: 1.2rem 1rem;
-      border-radius: 8px;
       background: rbga(255, 255, 255, 0.5);
       border: none;
       border-bottom: 3px solid transparent;
@@ -181,26 +180,27 @@ const FormSubmitted = styled.div`
   margin: 0.5vh 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   height: 30vh;
-  background: ${colors.grLightOrange};
   padding: 5%;
-  border: 2px solid white;
-  border-radius: 8px;
 
   @media (min-width: 992px) {
     align-items: flex-start;
+    width: 100%;
   }
 
   p {
-    font-size: 2rem;
-    margin: 0.75rem;
+    margin-bottom: 0.75rem;
     padding: 0;
     line-height: 2;
+    font-size: 1.6rem;
   }
 `
 
 const Errors = styled.div`
-  color: red;
+  width: 100%;
+  p {
+    color: red;
+  }
 `

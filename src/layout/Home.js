@@ -3,6 +3,7 @@ import Welcome from './Welcome'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
 import ContactMe from './ContactMe'
+import Footer from '../container/Footer/Footer'
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       <Welcome />
       <AboutMe />
       <Skills />
-      <ContactMe />
+      {/* <ContactMe /> */}
+      <Footer />
     </Container>
   )
 }

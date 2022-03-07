@@ -7,72 +7,65 @@ import colors from '../styles/Colors'
 const AboutMe = () => {
   return (
     <Container>
-      <Heading>
-        <h3>A Little About Me</h3>
-      </Heading>
-      <ImageContainer>
-        <img src="/images/darran-o-shea.jpg" alt="" />
-      </ImageContainer>
+      <InnerContainer>
+        <Heading>
+          <h3>Hi, I'm Darran</h3>
+        </Heading>
+        <ImageContainer>
+          <img src="/images/darran-o-shea.jpg" alt="" />
+        </ImageContainer>
 
-      <TextContainer>
-        <TextBox>
-          <h4>A self-taught, Full-Stack developer</h4>
+        <TextContainer>
+          <TextBox>
+            <p>
+              I used to be the operations manager for a small chain of independent bars
+              and restaurants. In addition to the dayjob, I built Wordpress sites as a fun{' '}
+              <em>
+                <span>hobby/side-hustle</span>
+              </em>{' '}
+              to indulge my passion for design.
+            </p>
+            <p>
+              I always wanted to learn more, but the 60+ hours/week dayjob didn't leave a
+              lot of time to study beyond HTML and CSS.
+            </p>
 
-          <p>
-            I'm Darran. I used to be the operations manager for a small chain of
-            independent bars and restaurants.
-          </p>
-          <p>
-            In addition to the dayjob, I built Wordpress sites as a fun{' '}
-            <em>
-              <span>hobby/side-hustle</span>
-            </em>{' '}
-            to indulge my passion for design.
-          </p>
-          <p>
-            I always wanted to learn more, but the 60+ hours/week dayjob didn't leave a
-            lot of time to study beyond HTML and CSS.
-          </p>
-        </TextBox>
-        <TextBox>
-          <h4>And then.....Lockdowns!</h4>
-          <p>
-            Instead of baking Banana Bread, I kept sane with Youtube Javascript tutorials.
-            I came across The Odin Project, a free structured online course, and got
-            addicted.
-          </p>
-          <TextLink href="https://www.theodinproject.com/about">
-            About The Odin Project
-          </TextLink>
-          <p>
-            While furloughed, I found myself excitedly coding 10+ hours a day and knew it
-            was decision time! So.....
-          </p>
-          <p>
-            <span>I took the plunge and left hospitality</span>
-          </p>
+            <p>
+              And then the lockdowns started. Instead of baking Banana Bread, I kept sane
+              with Youtube Javascript tutorials. I came across The Odin Project, a free
+              structured online course, and got addicted.
+            </p>
+            <TextLink href="https://www.theodinproject.com/about">
+              About The Odin Project
+            </TextLink>
+            <p>
+              While furloughed, I found myself excitedly coding 10+ hours a day and knew
+              it was decision time! So.....
+              <span>I took the plunge and left hospitality</span>
+            </p>
 
-          <p>
-            It’s been an exhilarating year, but I'm feeling psyched to start my{' '}
-            <em>
-              <span> fullstack dev</span>
-            </em>{' '}
-            career.
-          </p>
-          <TextLink href="https://github.com/DarranOS">github.com/DarranOS</TextLink>
-        </TextBox>
-        <ButtonsContainer>
-          <Link to="/projects">
-            <SecondaryButton
-              text={'Check out my Projects  >'}
-              color="white"
-              background={colors.compBlue}
-              flash={colors.compBlue}
-              fullBorder
-            />
-          </Link>
-        </ButtonsContainer>
-      </TextContainer>
+            <p>
+              It’s been an exhilarating year, but I'm feeling psyched to start my{' '}
+              <em>
+                <span> fullstack dev</span>
+              </em>{' '}
+              career.
+            </p>
+            <TextLink href="https://github.com/DarranOS">github.com/DarranOS</TextLink>
+          </TextBox>
+          <ButtonsContainer>
+            <Link to="/projects">
+              <SecondaryButton
+                text={'Check out my Projects  >'}
+                color="white"
+                background={colors.compBlue}
+                flash={colors.compBlue}
+                fullBorder
+              />
+            </Link>
+          </ButtonsContainer>
+        </TextContainer>
+      </InnerContainer>
     </Container>
   )
 }
@@ -80,14 +73,15 @@ const AboutMe = () => {
 export default AboutMe
 
 const Container = styled.div`
-  margin-top: 10vh;
-  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`
+
+const InnerContainer = styled.div`
   display: grid;
-  overflow: hidden;
   grid-template-columns: 1fr;
   width: 100%;
-  padding: 0vh 5vw;
-  ${'' /* min-height: 100vh; */}
   grid:
     'heading'
     'pic'
@@ -96,13 +90,16 @@ const Container = styled.div`
   @media (min-width: 992px) {
     display: grid;
     margin-top: 0;
-    padding: 10vh 15vw 0 15vw;
+    margin-block: 10vh;
     grid:
       'heading heading'
       'bio pic';
     grid-template-columns: 3fr 1.5fr;
     grid-template-rows: 0.1fr 2fr;
-    gap: 1vw;
+  }
+
+  @media (min-width: 1300px) {
+    width: 1200px;
   }
 `
 
@@ -154,7 +151,7 @@ const ImageContainer = styled.div`
   }
 
   &:hover {
-    transform: scale(1.1) rotate(3deg) translateY(-2rem) translateX(2rem);
+    transform: scale(1.05) rotate(2deg) translateY(-1rem) translateX(rem);
     outline-offset: 1.5rem;
     outline: 0.3rem solid ${colors.secondary};
   }
@@ -181,13 +178,13 @@ const ImageContainer = styled.div`
     width: 20vw;
     height: 20vw;
     margin-top: 0;
-    margin-right: 0;
+    margin-right: 1vw;
     border-radius: 50%;
 
     img {
       place-self: center;
       overflow: hidden;
-      width: 20vw;
+      width: 100%;
       height: 20vw;
     }
   }
@@ -261,7 +258,7 @@ const TextBox = styled.div`
   @media (min-width: 1200px) {
     p {
       line-height: 1.6;
-      padding-right: 15%;
+      padding-right: 5%;
     }
 
     p:not(:last-child) {

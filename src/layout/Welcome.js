@@ -170,6 +170,13 @@ const InnerDiv = styled.div`
     align-items: flex-start;
     ${'' /* padding-left: 40%; */}
   }
+
+  ${
+    '' /* @media (min-width: 1300px) {
+    background: hotpink;
+    width: 1200px;
+  } */
+  }
 `
 
 const HeadingContainer1 = styled.div`

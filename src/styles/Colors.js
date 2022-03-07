@@ -1,6 +1,7 @@
 const colors = {
   primary: '#FE9622',
   secondary: '#FEC922',
+  brightOrange: '#Ffd944',
   purple: '#6B0FC0',
   pink: 'hotpink',
   black: 'rgba(0, 0, 0)',

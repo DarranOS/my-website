@@ -46,11 +46,15 @@ import { Elementor } from '@styled-icons/fa-brands/Elementor'
 import { Wordpress } from '@styled-icons/simple-icons/Wordpress'
 import { Phone } from '@styled-icons/material/Phone'
 import { Email } from '@styled-icons/material/Email'
+import { Facebook } from '@styled-icons/bootstrap/Facebook'
+import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
+
 const Logo = styled.div`
   display: flex;
   width: ${(props) => props.size};
   height: ${(props) => props.size};
   color: ${(props) => props.color};
+  transition: all 4s;
 
   :hover {
     color: ${(props) => props.hoverColor};
@@ -328,6 +332,19 @@ function IconGen({ icon, color, size, hoverColor }) {
       return (
         <Logo size={size} color={color} hoverColor={hoverColor}>
           <Phone />
+        </Logo>
+      )
+    case 'Facebook':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <Facebook />
+        </Logo>
+      )
+
+    case 'Linkedin':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <Linkedin />
         </Logo>
       )
 

@@ -67,26 +67,44 @@ h2 {
 }
 
 h3 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: 'BasementGrotesque';
   text-transform: uppercase;
   display: inline-block;
   transition: all 0.2s;
-  text-align: center;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
 }
 
 h4 {
+  line-height: 1;
   font-size: 1.6rem;
   font-weight: 700;
   text-transform: uppercase;
   font-family: 'BasementGrotesque';
 }
 
-p {
-  font-size: 1.6rem;
+h5 {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-p::selection {
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+p::selection,
+span::selection {
   background: #ff8c00;
   color: yellow;
   font-size: 1.9;
