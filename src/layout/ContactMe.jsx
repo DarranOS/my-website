@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import SecondaryButton from '../components/SecondaryButton'
 import colors from '../styles/Colors'
 import IconGen from '../components/IconGen'
-import ContactForm from './ContactForm'
+import ContactForm from '../components/ContactForm'
 
 const ContactMe = () => {
   return (

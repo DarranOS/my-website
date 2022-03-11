@@ -41,7 +41,7 @@ const AboutMe = () => {
             <p>
               While furloughed, I found myself excitedly coding 10+ hours a day and knew
               it was decision time! So.....
-              <span>I took the plunge and left hospitality</span>
+              <span>I took the plunge and left hospitality.</span>
             </p>
 
             <p>
@@ -76,6 +76,8 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+  padding: 10vh 5vw;
 `
 
 const InnerContainer = styled.div`

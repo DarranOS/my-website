@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Welcome from './Welcome'
 import AboutMe from './AboutMe'
 import Skills from './Skills'
-import ContactMe from './ContactMe'
+import Projects from './Projects'
 import Footer from '../container/Footer/Footer'
 
 const Home = () => {
@@ -10,8 +10,8 @@ const Home = () => {
     <Container>
       <Welcome />
       <AboutMe />
+      <Projects />
       <Skills />
-      {/* <ContactMe /> */}
       <Footer />
     </Container>
   )

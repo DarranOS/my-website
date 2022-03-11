@@ -21,7 +21,7 @@ const ButtonStyle = styled.div`
   align-items: center;
   border-color: ${(props) => props.color};
   border-style: solid;
-  border-width: ${(props) => (props.fullBorder ? '2px' : '0 0 2px 0')};
+  border-width: ${(props) => (props.fullBorder ? '2px' : '0 0 0 0')};
   padding: 1rem 2rem;
   padding-right: 1.5rem;
   font-weight: bold;

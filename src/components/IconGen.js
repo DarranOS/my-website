@@ -48,7 +48,7 @@ import { Phone } from '@styled-icons/material/Phone'
 import { Email } from '@styled-icons/material/Email'
 import { Facebook } from '@styled-icons/bootstrap/Facebook'
 import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
-
+import { EyeFill } from '@styled-icons/bootstrap/EyeFill'
 const Logo = styled.div`
   display: flex;
   width: ${(props) => props.size};
@@ -345,6 +345,13 @@ function IconGen({ icon, color, size, hoverColor }) {
       return (
         <Logo size={size} color={color} hoverColor={hoverColor}>
           <Linkedin />
+        </Logo>
+      )
+
+    case 'Eye':
+      return (
+        <Logo size={size} color={color} hoverColor={hoverColor}>
+          <EyeFill />
         </Logo>
       )
 

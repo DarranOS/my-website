@@ -2,6 +2,7 @@ const data = [
   {
     id: '1',
     title: 'Apotheosis',
+    tag: 'Next.js',
     status: 'Deployed MVP',
     quick: ['• Blog powered by Sanity CMS.', '• Optimised up with Next.js'],
 
@@ -26,6 +27,7 @@ const data = [
   {
     id: '2',
     title: 'Overleigh.co.uk',
+    tag: 'Wordpress',
     status: 'Operational site',
     quick: [
       '• Live Wordpress site hosted on Google Cloud Platform.',
@@ -47,30 +49,32 @@ const data = [
     done: [],
   },
 
-  {
-    id: '3',
-    title: 'Facebook Clone',
-    status: 'Deployed MVP',
-    quick: ['Sign in with real Facebook credentials.', 'Post updates and images'],
-    desc: [
-      'I found a Youtube tutorial that for an intro to Next JS and Tailwind CSS. But it was 8 months old and Next JS and Firebase had breaking syntax changes.',
-      'Rather than revert to an earlier version of those packages, I set myself the challenge to find the answer in the docs.',
-      'It took a few hours of trawling, but it was very rewarding to figure out!',
-    ],
-    next: [],
-    icons: ['React', 'Bootstrap', 'Tailwind CSS', 'Next JS', 'Firebase'],
-    img: '/images/facebook_800.webp',
-    url: '/projects-1',
-    git: 'https://github.com/DarranOS/memory-card',
-    deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
-    improv: ['Used redux to manage state'],
-    todo: ['Fix upload syntax'],
-    done: ['Make responsive'],
-  },
+  // {
+  //   id: '3',
+  //   title: 'Facebook Clone',
+  //   tag: 'Next.js',
+  //   status: 'Deployed MVP',
+  //   quick: ['Sign in with real Facebook credentials.', 'Post updates and images'],
+  //   desc: [
+  //     'I found a Youtube tutorial that for an intro to Next JS and Tailwind CSS. But it was 8 months old and Next JS and Firebase had breaking syntax changes.',
+  //     'Rather than revert to an earlier version of those packages, I set myself the challenge to find the answer in the docs.',
+  //     'It took a few hours of trawling, but it was very rewarding to figure out!',
+  //   ],
+  //   next: [],
+  //   icons: ['React', 'Bootstrap', 'Tailwind CSS', 'Next JS', 'Firebase'],
+  //   img: '/images/facebook_800.webp',
+  //   url: '/projects-1',
+  //   git: 'https://github.com/DarranOS/memory-card',
+  //   deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
+  //   improv: ['Used redux to manage state'],
+  //   todo: ['Fix upload syntax'],
+  //   done: ['Make responsive'],
+  // },
 
   {
     id: '3',
     title: 'Memory Game',
+    tag: 'React',
     status: 'Deployed MVP',
     quick: ['• A react memory game', '• Redux state management'],
     desc: ['Built as part of Odin project as an introduction to React.'],
@@ -89,32 +93,34 @@ const data = [
     done: ['Implement Redux'],
   },
 
-  // {
-  //   id: '5',
-  //   title: 'Borg Crush',
-  //   status: 'Deployed MVP',
-  //   quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
-  //   desc: [
-  //     'A simple Star Trek themed Candy Crush analogue game.',
-  //     'Drag and drop three matching icons.',
-  //   ],
-  //   icons: ['React'],
-  //   img: '/images/borg_crush_800.webp',
-  //   url: '/projects-3',
-  //   git: 'https://github.com/DarranOS/memory-card',
-  //   deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
-  //   improv: ['Used redux to manage state'],
-  //   todo: [
-  //     'Add mount/unmount animations',
-  //     'Improve UI for interaction',
-  //     'Replace default React Favicon and title',
-  //   ],
-  //   done: ['Make responsive', 'Correct Typos'],
-  // },
+  {
+    id: '5',
+    title: 'Borg Crush',
+    tag: 'Javascript',
+    status: 'Deployed MVP',
+    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
+    desc: [
+      'A simple Star Trek themed Candy Crush analogue game.',
+      'Drag and drop three matching icons.',
+    ],
+    icons: ['React', 'Wordpress'],
+    img: '/images/borg_crush_800.webp',
+    url: '/projects-3',
+    git: 'https://github.com/DarranOS/memory-card',
+    deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
+    improv: ['Used redux to manage state'],
+    todo: [
+      'Add mount/unmount animations',
+      'Improve UI for interaction',
+      'Replace default React Favicon and title',
+    ],
+    done: ['Make responsive', 'Correct Typos'],
+  },
 
   // {
-  //   id: '5',
+  //   id: '6',
   //   title: 'Github Finder',
+  //   tag: 'React',
   //   status: 'Deployed MVP',
   //   quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
   //   desc: [
@@ -140,6 +146,7 @@ const data = [
   // {
   //   id: '7',
   //   title: 'Library',
+  //   tag: 'React',
   //   status: 'Deployed MVP',
   //   quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
   //   desc: [
@@ -166,6 +173,7 @@ const data = [
   // {
   //   id: '2',
   //   title: 'Battleships',
+  //   tag: 'React',
   //   status: 'Deployed MP',
   //   quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
   //   desc: [
@@ -174,8 +182,8 @@ const data = [
   //     'THis was a great project for me because X, Y and Z',
   //     'THis was a great project for me because X, Y and Z',
   //   ],
-  //   icons: ['Sass'],
-  //   img: '/images/battleships_800.webp',
+  //   icons: ['Sass', 'React'],
+  //   img: '/images/library_800.webp',
   //   url: '/projects-2',
   //   git: 'https://github.com/DarranOS/memory-card',
   //   deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
@@ -188,6 +196,31 @@ const data = [
   //   ],
   //   done: ['Make responsive', 'Correct Typos'],
   // },
+
+  {
+    id: '9',
+    title: 'Baytree.com',
+    tag: 'Wordpress',
+    status: 'Operational site',
+    quick: [
+      '• Live Wordpress site hosted on Google Cloud Platform.',
+      '• Stripe payments enabled and Airbnb integration',
+    ],
+    desc: [
+      "I built and have maintained this site since 2018. It's been through a few tweaks and redesigns in that time.",
+      'The front end was built with Elementor Page builder.',
+      'Deployed stack on Google Cloud platform through Bitnami by VMware',
+    ],
+    icons: ['Wordpress', 'Elementor', 'Google Cloud Platform', 'Bitnami'],
+
+    img: '/images/baytree_800.webp',
+    url: '/projects-2',
+    // git: 'https://www.overleighatchester.co.uk',
+    deploy: 'https://baytreelodge.com/',
+    improv: [],
+    todo: ['Pending client request'],
+    done: [],
+  },
 ]
 
 export default data
