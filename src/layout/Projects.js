@@ -65,8 +65,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     padding: 0vh 15vw;
-    clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0% 100%);
-    padding-top: 8vh;
+    clip-path: polygon(0 6%, 100% 0%, 100% 94%, 0% 100%);
+    padding-top: 16vh;
     padding-bottom: 8vh;
     align-items: center;
     max-height: 100%;
@@ -89,8 +89,7 @@ const Heading = styled.h3`
   text-align: left;
 
   @media (min-width: 992px) {
-    margin-bottom: 1vh;
-    margin-top: 16vh;
+    margin-block: 0;
     width: 70%;
     padding-right: 0;
   }
@@ -98,9 +97,11 @@ const Heading = styled.h3`
 // Framer motion Div
 const ProjectsGrid = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 31%));
+
+  grid-template-columns: 1fr;
   gap: 4rem;
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 31%));
     margin-bottom: 10vh;
   }
 `

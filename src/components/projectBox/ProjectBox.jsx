@@ -16,6 +16,7 @@ const ProjectBox = ({ title, quick, icons, img, url, git, tag, deploy }) => {
         <Overlay
           initial={{ opacity: 0 }}
           whileHover={{ opacity: [0, 1] }}
+          whileFocus={{ opacity: [0, 1] }}
           transition={{ duration: 0.4, ease: 'easeInOut', staggerChildren: 0.5 }}
         >
           {quick.map((item) => (

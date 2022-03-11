@@ -1,6 +1,27 @@
 const data = [
   {
     id: '1',
+    title: 'This Site',
+    tag: 'React',
+    status: 'Operational site',
+    quick: ['• Check Out behind the scenes.'],
+    desc: [
+      "I built and have maintained this site since 2018. It's been through a few tweaks and redesigns in that time.",
+      'The front end was built with Elementor Page builder.',
+      'Deployed stack on Google Cloud platform through Bitnami by VMware',
+    ],
+    icons: ['React', 'Framer Motion', 'Google Cloud Platform', 'Bitnami'],
+
+    img: '/images/mysite_800.webp',
+    url: '/projects-2',
+    git: 'https://github.com/DarranOS/my-website',
+    deploy: 'https://darranoshea.co.uk',
+    improv: [],
+    todo: ['Pending client request'],
+    done: [],
+  },
+  {
+    id: '1',
     title: 'Apotheosis',
     tag: 'Next.js',
     status: 'Deployed MVP',
@@ -93,29 +114,29 @@ const data = [
     done: ['Implement Redux'],
   },
 
-  {
-    id: '5',
-    title: 'Borg Crush',
-    tag: 'Javascript',
-    status: 'Deployed MVP',
-    quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
-    desc: [
-      'A simple Star Trek themed Candy Crush analogue game.',
-      'Drag and drop three matching icons.',
-    ],
-    icons: ['React', 'Wordpress'],
-    img: '/images/borg_crush_800.webp',
-    url: '/projects-3',
-    git: 'https://github.com/DarranOS/memory-card',
-    deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
-    improv: ['Used redux to manage state'],
-    todo: [
-      'Add mount/unmount animations',
-      'Improve UI for interaction',
-      'Replace default React Favicon and title',
-    ],
-    done: ['Make responsive', 'Correct Typos'],
-  },
+  // {
+  //   id: '5',
+  //   title: 'Borg Crush',
+  //   tag: 'Javascript',
+  //   status: 'Deployed MVP',
+  //   quick: ['Sign in with Facebook credentials.', 'Post status updates and images'],
+  //   desc: [
+  //     'A simple Star Trek themed Candy Crush analogue game.',
+  //     'Drag and drop three matching icons.',
+  //   ],
+  //   icons: ['React', 'Wordpress'],
+  //   img: '/images/borg_crush_800.webp',
+  //   url: '/projects-3',
+  //   git: 'https://github.com/DarranOS/memory-card',
+  //   deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
+  //   improv: ['Used redux to manage state'],
+  //   todo: [
+  //     'Add mount/unmount animations',
+  //     'Improve UI for interaction',
+  //     'Replace default React Favicon and title',
+  //   ],
+  //   done: ['Make responsive', 'Correct Typos'],
+  // },
 
   // {
   //   id: '6',

@@ -249,6 +249,7 @@ const HeadingContainer2 = styled.div`
 const HeadingContainer3 = styled.div`
   color: ${(props) => props.color};
   display: flex;
+  margin-bottom: 10vh;
   flex-direction: column;
   padding-bottom: max(20px, 5vh);
   justify-content: center;
@@ -259,6 +260,7 @@ const HeadingContainer3 = styled.div`
     align-items: center;
   }
   @media (min-width: 768px) {
+    margin-bottom: 0;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;

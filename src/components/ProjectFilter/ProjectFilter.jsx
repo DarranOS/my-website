@@ -28,7 +28,7 @@ const ProjectFilter = ({ setActiveCategory, activeCategory, setFiltered, project
             All
           </SecondaryButton>
         </div>
-        <div onClick={() => setActiveCategory('UI/UX')}>
+        {/* <div onClick={() => setActiveCategory('UI/UX')}>
           <SecondaryButton
             background={activeCategory === 'UI/UX' ? colors.compBlue : colors.white}
             color={activeCategory === 'UI/UX' ? colors.white : colors.compBlue}
@@ -36,7 +36,7 @@ const ProjectFilter = ({ setActiveCategory, activeCategory, setFiltered, project
           >
             UI/UX
           </SecondaryButton>
-        </div>
+        </div> */}
         <div onClick={() => setActiveCategory('React')}>
           <SecondaryButton
             background={activeCategory === 'React' ? colors.compBlue : colors.white}
@@ -65,14 +65,22 @@ export default ProjectFilter
 const Filter = styled.div`
   display: flex;
   flex-direction: column;
+  margin-block: 2rem;
+
+  @media (min-width: 992px) {
+    margin-block: 2rem;
+  }
 `
 const Buttons = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-block: 2vh;
 
   div {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0rem;
+    }
   }
 
   *:not(:last-child) {

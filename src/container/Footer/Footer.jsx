@@ -169,7 +169,7 @@ const TextBoxes = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 6vh;
+  ${'' /* margin-bottom: 4vh; */}
 
   @media (min-width: 992px) {
     flex-direction: column;
@@ -246,7 +246,11 @@ const BottomRow = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-top: 1px solid ${colors.white};
-  padding-top: 3vh;
+  padding-top: 1vh;
+
+  p {
+    font-size: 1.4rem;
+  }
 
   @media (min-width: 992px) {
     padding-top: 1vh;
@@ -255,7 +259,7 @@ const BottomRow = styled.div`
 `
 const BottomLeft = styled.div``
 const BottomRight = styled.div`
-  padding-block: 2vh;
+  padding-block: 1vh;
 
   @media (min-width: 992px) {
     padding-block: 0;

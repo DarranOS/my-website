@@ -67,7 +67,7 @@ function ContactForm({ width }) {
               name="message"
               placeholder="Message"
               maxLength="800"
-              rows="6"
+              rows="4"
             />
             <p>{messageCharsLeft} characters left</p>
             <br />
@@ -116,7 +116,7 @@ const Container = styled.div`
       font-family: inherit;
       font-size: 1.6rem;
       color: #393c41;
-      padding: 1.2rem 1rem;
+      padding: 0.8rem 1rem;
       background: rbga(255, 255, 255, 0.5);
       border: none;
       border-bottom: 3px solid transparent;
@@ -180,10 +180,10 @@ const FormSubmitted = styled.div`
   margin: 0.5vh 0;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  height: 30vh;
-  padding: 5%;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  width: 100%;
 
   @media (min-width: 992px) {
     align-items: flex-start;
@@ -194,7 +194,7 @@ const FormSubmitted = styled.div`
     margin-bottom: 0.75rem;
     padding: 0;
     line-height: 2;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 `
 
