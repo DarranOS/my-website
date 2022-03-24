@@ -242,6 +242,31 @@ const data = [
     todo: ['Pending client request'],
     done: [],
   },
+
+  {
+    id: '10',
+    title: 'the-suburbs.co.uk',
+    tag: 'Wordpress',
+    status: 'Operational site',
+    quick: [
+      '• Live ecommerce Wordpress site hosted on Google Cloud Platform.',
+      '• Stripe payments enabled and woocommerce integration',
+    ],
+    desc: [
+      'The front end was built with Elementor Page builder.',
+      'Deployed stack on Google Cloud platform through Bitnami by VMware',
+      'Subsequently handed-off to an agency.',
+    ],
+    icons: ['Wordpress', 'Elementor', 'Google Cloud Platform', 'Bitnami'],
+
+    img: '/images/suburbs_800.webp',
+    url: '/projects-2',
+    // git: 'https://www.overleighatchester.co.uk',
+    deploy: 'https://the-suburbs.co.uk/',
+    improv: [],
+    todo: ['Pending client request'],
+    done: [],
+  },
 ]
 
 export default data
