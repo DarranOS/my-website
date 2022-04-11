@@ -55,6 +55,35 @@ const ProjectFilter = ({ setActiveCategory, activeCategory, setFiltered, project
             Wordpress
           </SecondaryButton>
         </div>
+        <div onClick={() => setActiveCategory('Typescript')}>
+          <SecondaryButton
+            background={activeCategory === 'Typescript' ? colors.compBlue : colors.white}
+            color={activeCategory === 'Typescript' ? colors.white : colors.compBlue}
+            flash={colors.compBlue}
+          >
+            Typescript
+          </SecondaryButton>
+        </div>
+        <div onClick={() => setActiveCategory('Next.js')}>
+          <SecondaryButton
+            background={activeCategory === 'Next.js' ? colors.compBlue : colors.white}
+            color={activeCategory === 'Next.js' ? colors.white : colors.compBlue}
+            flash={colors.compBlue}
+          >
+            Next.js
+          </SecondaryButton>
+        </div>
+        <div onClick={() => setActiveCategory('Illustration')}>
+          <SecondaryButton
+            background={
+              activeCategory === 'Illustration' ? colors.compBlue : colors.white
+            }
+            color={activeCategory === 'Illustration' ? colors.white : colors.compBlue}
+            flash={colors.compBlue}
+          >
+            Illustration
+          </SecondaryButton>
+        </div>
       </Buttons>
     </Filter>
   )
@@ -76,7 +105,7 @@ const Buttons = styled.div`
   flex-wrap: wrap;
 
   div {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @media (min-width: 992px) {
       margin-bottom: 0rem;

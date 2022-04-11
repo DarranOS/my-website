@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import IconGen from '../IconGen'
 import colors from '../../styles/Colors'
-const ProjectBox = ({ title, quick, icons, img, url, git, tag, deploy }) => {
+import { Link } from 'react-router-dom'
+const ProjectBox = ({ title, quick, icons, img, url, git, tag, deploy, link }) => {
   return (
     <Project
       animate={{ opacity: 1 }}
@@ -17,20 +18,32 @@ const ProjectBox = ({ title, quick, icons, img, url, git, tag, deploy }) => {
           initial={{ opacity: 0 }}
           whileHover={{ opacity: [0, 1] }}
           whileFocus={{ opacity: [0, 1] }}
+          onTapStart={{ opacity: 1 }}
           transition={{ duration: 0.4, ease: 'easeInOut', staggerChildren: 0.5 }}
         >
           {quick.map((item) => (
             <p>{item}</p>
           ))}
           <Links>
-            <a href={deploy} target="_blank" rel="noreferrer">
-              <motion.div
-                transition={{ duration: 0.25 }}
-                whileHover={{ scale: [1, 0.9] }}
-              >
-                <IconGen icon="Eye" size="36px" color={colors.compBlue} />
-              </motion.div>
-            </a>
+            {link ? (
+              <Link to="/projects">
+                <motion.div
+                  transition={{ duration: 0.25 }}
+                  whileHover={{ scale: [1, 0.9] }}
+                >
+                  <IconGen icon="Eye" size="36px" color={colors.compBlue} />
+                </motion.div>
+              </Link>
+            ) : (
+              <a href={deploy} target="_blank" rel="noreferrer">
+                <motion.div
+                  transition={{ duration: 0.25 }}
+                  whileHover={{ scale: [1, 0.9] }}
+                >
+                  <IconGen icon="Eye" size="36px" color={colors.compBlue} />
+                </motion.div>
+              </a>
+            )}
             {git && (
               <a href={git} target="_blank" rel="noreferrer">
                 <motion.div
@@ -45,12 +58,14 @@ const ProjectBox = ({ title, quick, icons, img, url, git, tag, deploy }) => {
         </Overlay>
         <img src={img} alt="" />
       </ImgDiv>
-      <TextDiv>
-        <TextTag>
-          <p>{tag}</p>
-        </TextTag>
-        <h4>{title}</h4>
-      </TextDiv>
+      <Link to="/projects">
+        <TextDiv>
+          <TextTag>
+            <p>{tag}</p>
+          </TextTag>
+          <h4>{title}</h4>
+        </TextDiv>
+      </Link>
     </Project>
   )
 }
@@ -142,7 +157,7 @@ const Links = styled.div`
   width: 25%;
   margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   a {
     cursor: pointer;
 
@@ -151,5 +166,9 @@ const Links = styled.div`
       padding: 0.4rem;
       border-radius: 50%;
     }
+  }
+
+  a:nth-child(2) {
+    margin-left: 2rem;
   }
 `

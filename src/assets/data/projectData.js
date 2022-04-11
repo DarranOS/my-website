@@ -34,7 +34,7 @@ const data = [
       'Incremental static regeneration and page caching with Next.js',
       'Just a nerdy blog to share rules changes for Dungeons and Dragons with my playgroup.',
     ],
-    icons: ['Typescript', 'Next JS', 'Tailwind CSS', 'Sanity CMS'],
+    icons: ['Typescript', 'Next.js', 'Tailwind CSS', 'Sanity CMS'],
 
     img: '/images/apotheosis_800.webp',
     url: '/projects-1',
@@ -70,27 +70,27 @@ const data = [
     done: [],
   },
 
-  // {
-  //   id: '3',
-  //   title: 'Facebook Clone',
-  //   tag: 'Next.js',
-  //   status: 'Deployed MVP',
-  //   quick: ['Sign in with real Facebook credentials.', 'Post updates and images'],
-  //   desc: [
-  //     'I found a Youtube tutorial that for an intro to Next JS and Tailwind CSS. But it was 8 months old and Next JS and Firebase had breaking syntax changes.',
-  //     'Rather than revert to an earlier version of those packages, I set myself the challenge to find the answer in the docs.',
-  //     'It took a few hours of trawling, but it was very rewarding to figure out!',
-  //   ],
-  //   next: [],
-  //   icons: ['React', 'Bootstrap', 'Tailwind CSS', 'Next JS', 'Firebase'],
-  //   img: '/images/facebook_800.webp',
-  //   url: '/projects-1',
-  //   git: 'https://github.com/DarranOS/memory-card',
-  //   deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
-  //   improv: ['Used redux to manage state'],
-  //   todo: ['Fix upload syntax'],
-  //   done: ['Make responsive'],
-  // },
+  {
+    id: '3',
+    title: 'Facebook Clone',
+    tag: 'Next.js',
+    status: 'Deployed MVP',
+    quick: ['Sign in with real Facebook credentials.', 'Post updates and images'],
+    desc: [
+      'I found a Youtube tutorial that for an intro to Next JS and Tailwind CSS. But it was 8 months old and Next JS and Firebase had breaking syntax changes.',
+      'Rather than revert to an earlier version of those packages, I set myself the challenge to find the answer in the docs.',
+      'It took a few hours of trawling, but it was very rewarding to figure out!',
+    ],
+    next: [],
+    icons: ['React', 'Bootstrap', 'Tailwind CSS', 'Next.js', 'Firebase'],
+    img: '/images/facebook_800.webp',
+    url: '/projects-1',
+    git: 'https://github.com/DarranOS/memory-card',
+    deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
+    improv: ['Used redux to manage state'],
+    todo: ['Fix upload syntax'],
+    done: ['Make responsive'],
+  },
 
   {
     id: '3',
@@ -223,10 +223,7 @@ const data = [
     title: 'Baytree.com',
     tag: 'Wordpress',
     status: 'Operational site',
-    quick: [
-      '• Live Wordpress site hosted on Google Cloud Platform.',
-      '• Stripe payments enabled and Airbnb integration',
-    ],
+    quick: ['• Live Wordpress site hosted on Google Cloud Platform.'],
     desc: [
       "I built and have maintained this site since 2018. It's been through a few tweaks and redesigns in that time.",
       'The front end was built with Elementor Page builder.',
@@ -250,7 +247,7 @@ const data = [
     status: 'Operational site',
     quick: [
       '• Live ecommerce Wordpress site hosted on Google Cloud Platform.',
-      '• Stripe payments enabled and woocommerce integration',
+      '• Stripe payments and woocommerce integration',
     ],
     desc: [
       'The front end was built with Elementor Page builder.',
@@ -266,6 +263,28 @@ const data = [
     improv: [],
     todo: ['Pending client request'],
     done: [],
+  },
+  {
+    id: '11',
+    title: 'Cocktail Menu Design',
+    tag: 'Illustration',
+    status: 'Operational site',
+    quick: ['• Illustration work for a modern, stylish cocktail menu design.'],
+    desc: [
+      'The front end was built with Elementor Page builder.',
+      'Deployed stack on Google Cloud platform through Bitnami by VMware',
+      'Subsequently handed-off to an agency.',
+    ],
+    icons: ['Photoshop', 'Illustration'],
+
+    img: '/images/cocktails2_800.webp',
+    url: '/projects-2',
+    // git: 'https://www.overleighatchester.co.uk',
+    deploy: 'https://the-suburbs.co.uk/',
+    improv: [],
+    todo: ['Pending client request'],
+    done: [],
+    link: 'illustration',
   },
 ]
 

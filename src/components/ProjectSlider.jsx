@@ -8,8 +8,10 @@ import data from '../assets/data/projectData'
 import colors from '../styles/Colors'
 import IconGen from './IconGen'
 
-function ImgSlider() {
+function ImgSlider(initialSlide = 0) {
   const sliderRef = useRef(null)
+
+  console.log(initialSlide)
 
   let settings = {
     dots: false,
@@ -20,6 +22,7 @@ function ImgSlider() {
     autoplay: false,
     ref: sliderRef,
     arrows: false,
+    initialSlide: initialSlide,
   }
 
   return (

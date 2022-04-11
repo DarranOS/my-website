@@ -51,6 +51,13 @@ const Footer = () => {
                   <p>Github</p>
                 </IconBox>
               </TextBox>
+              <TextBox>
+                <IconBox href="https://dribbble.com/DarranOShea">
+                  <IconGen icon="Dribbble" size="24px" color="white" />
+
+                  <p>Dribbble</p>
+                </IconBox>
+              </TextBox>
             </TextBoxes>
           </TextContainer>
           <FormContainer>
@@ -60,7 +67,8 @@ const Footer = () => {
         <BottomRow>
           <BottomLeft>
             <p>
-              Designed by Darran O'Shea at <span>darranoshea.co.uk</span>
+              Designed by Darran O'Shea and made with coffee and questionable code{' '}
+              <span>darranoshea.co.uk</span>.
             </p>
           </BottomLeft>
           <BottomRight>
@@ -257,9 +265,13 @@ const BottomRow = styled.div`
     flex-direction: row;
   }
 `
-const BottomLeft = styled.div``
+const BottomLeft = styled.div`
+  p {
+    line-height: 1.6;
+  }
+`
 const BottomRight = styled.div`
-  padding-block: 1vh;
+  padding-block: 3vh;
 
   @media (min-width: 992px) {
     padding-block: 0;

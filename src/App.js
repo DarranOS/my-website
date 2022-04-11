@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import './App.scss'
 import ProjectSlider from './components/ProjectSlider'
+import Illustration from './components/illustration/Illustration'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/projects">
             <ProjectSlider />
+          </Route>
+          <Route path="/illustration">
+            <Illustration />
           </Route>
 
           <Route path="/">
