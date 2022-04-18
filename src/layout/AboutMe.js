@@ -53,16 +53,14 @@ const AboutMe = () => {
             </p>
             <TextLink href="https://github.com/DarranOS">github.com/DarranOS</TextLink>
           </TextBox>
-          <ButtonsContainer>
-            <Link to="/projects">
-              <SecondaryButton
-                text={'Check out my Projects  >'}
-                color="white"
-                background={colors.compBlue}
-                flash={colors.compBlue}
-                fullBorder
-              />
-            </Link>
+          <ButtonsContainer href="/DarranO'SheaResume.pdf" download>
+            <SecondaryButton
+              text={'Download my CV  >'}
+              color="white"
+              background={colors.compBlue}
+              flash={colors.compBlue}
+              fullBorder
+            />
           </ButtonsContainer>
         </TextContainer>
       </InnerContainer>
@@ -177,8 +175,8 @@ const ImageContainer = styled.div`
   @media (min-width: 1200px) {
     display: grid;
     place-self: start center;
-    width: 20vw;
-    height: 20vw;
+    width: 15vw;
+    height: 15vw;
     margin-top: 0;
     margin-right: 1vw;
     border-radius: 50%;
@@ -187,7 +185,7 @@ const ImageContainer = styled.div`
       place-self: center;
       overflow: hidden;
       width: 100%;
-      height: 20vw;
+      height: 100%;
     }
   }
 `
@@ -281,7 +279,7 @@ const TextLink = styled.a`
 `
 
 const ButtonsContainer = styled.a`
-  margin-top: 10vh;
+  margin-top: 8vh;
   display: flex;
   justify-content: space-between;
 `
