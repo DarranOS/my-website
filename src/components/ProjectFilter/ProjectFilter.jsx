@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
-import React from 'react'
 import styled from 'styled-components'
-import SecondaryButton from '../SecondaryButton'
-import colors from '../../styles/Colors'
+import { Button } from 'components'
+import { colors } from 'styles'
 
 const ProjectFilter = ({ setActiveCategory, activeCategory, setFiltered, projects }) => {
   useEffect(() => {
@@ -20,70 +19,71 @@ const ProjectFilter = ({ setActiveCategory, activeCategory, setFiltered, project
     <Filter>
       <Buttons>
         <div onClick={() => setActiveCategory('All')}>
-          <SecondaryButton
+          <Button
             background={activeCategory === 'All' ? colors.compBlue : colors.white}
             color={activeCategory === 'All' ? colors.white : colors.compBlue}
             flash={colors.compBlue}
+            fontsize={'1.4rem'}
           >
             All
-          </SecondaryButton>
+          </Button>
         </div>
-        {/* <div onClick={() => setActiveCategory('UI/UX')}>
-          <SecondaryButton
-            background={activeCategory === 'UI/UX' ? colors.compBlue : colors.white}
-            color={activeCategory === 'UI/UX' ? colors.white : colors.compBlue}
-            flash={colors.compBlue}
-          >
-            UI/UX
-          </SecondaryButton>
-        </div> */}
+
         <div onClick={() => setActiveCategory('React')}>
-          <SecondaryButton
+          <Button
             background={activeCategory === 'React' ? colors.compBlue : colors.white}
             color={activeCategory === 'React' ? colors.white : colors.compBlue}
             flash={colors.compBlue}
+            fontsize={'1.4rem'}
           >
             React
-          </SecondaryButton>
+          </Button>
         </div>
         <div onClick={() => setActiveCategory('Wordpress')}>
-          <SecondaryButton
+          <Button
             background={activeCategory === 'Wordpress' ? colors.compBlue : colors.white}
             color={activeCategory === 'Wordpress' ? colors.white : colors.compBlue}
             flash={colors.compBlue}
+            fontsize={'1.4rem'}
           >
             Wordpress
-          </SecondaryButton>
+          </Button>
         </div>
         <div onClick={() => setActiveCategory('Typescript')}>
-          <SecondaryButton
+          <Button
             background={activeCategory === 'Typescript' ? colors.compBlue : colors.white}
             color={activeCategory === 'Typescript' ? colors.white : colors.compBlue}
             flash={colors.compBlue}
+            fontsize={'1.4rem'}
           >
             Typescript
-          </SecondaryButton>
+          </Button>
         </div>
-        <div onClick={() => setActiveCategory('Next.js')}>
-          <SecondaryButton
-            background={activeCategory === 'Next.js' ? colors.compBlue : colors.white}
-            color={activeCategory === 'Next.js' ? colors.white : colors.compBlue}
+
+        <div onClick={() => setActiveCategory('Tailwind CSS')}>
+          <Button
+            background={
+              activeCategory === 'Tailwind CSS' ? colors.compBlue : colors.white
+            }
+            color={activeCategory === 'Tailwind CSS' ? colors.white : colors.compBlue}
             flash={colors.compBlue}
+            fontsize={'1.4rem'}
           >
-            Next.js
-          </SecondaryButton>
+            Tailwind CSS
+          </Button>
         </div>
-        <div onClick={() => setActiveCategory('Illustration')}>
-          <SecondaryButton
+        {/* <div onClick={() => setActiveCategory('Illustration')}>
+          <Button
             background={
               activeCategory === 'Illustration' ? colors.compBlue : colors.white
             }
             color={activeCategory === 'Illustration' ? colors.white : colors.compBlue}
             flash={colors.compBlue}
+            fontsize={'1.4rem'}
           >
             Illustration
-          </SecondaryButton>
-        </div>
+          </Button>
+        </div> */}
       </Buttons>
     </Filter>
   )
@@ -97,7 +97,8 @@ const Filter = styled.div`
   margin-block: 2rem;
 
   @media (min-width: 992px) {
-    margin-block: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
   }
 `
 const Buttons = styled.div`
@@ -113,6 +114,6 @@ const Buttons = styled.div`
   }
 
   *:not(:last-child) {
-    margin-right: 2rem;
+    margin-right: 3rem;
   }
 `

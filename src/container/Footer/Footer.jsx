@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import IconGen from '../../components/IconGen'
-import colors from '../../styles/Colors'
-import ContactForm from '../../components/ContactForm'
+import colors from 'styles/colors'
+import { IconGen, ContactForm } from 'components'
 
 const Footer = () => {
   const date = new Date().getFullYear()

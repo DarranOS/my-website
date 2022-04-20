@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { MobDrinks } from '../../constants/images'
+import { MobDrinks } from 'constants/images'
 import styled from 'styled-components'
 
 const Illustration = () => {

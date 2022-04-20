@@ -1,27 +1,21 @@
-import Home from './layout/Home'
-import Contact from './layout/Contact'
-import NavMenu from './layout/NavMenu'
+import { Home } from 'pages'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import './App.scss'
-import ProjectSlider from './components/ProjectSlider'
-import Illustration from './components/illustration/Illustration'
+// import ProjectSlider from './components/ProjectSlider'
+// import Illustration from './components/illustration/Illustration'
 
 function App() {
   return (
     <Container className="App">
       <Router>
-        <NavMenu />
         <Switch>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/projects">
+          {/* <Route path="/projects">
             <ProjectSlider />
-          </Route>
-          <Route path="/illustration">
+          </Route> */}
+          {/* <Route path="/illustration">
             <Illustration />
-          </Route>
+          </Route> */}
 
           <Route path="/">
             <Home />
