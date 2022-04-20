@@ -14,10 +14,6 @@ const Detail = ({ selectedProject, setModalIsOpen }) => {
 
         <ProjectName>
           <h2>{title}</h2>
-
-          <p>
-            <em>Status: {status} </em>
-          </p>
         </ProjectName>
         <ExternalLinks>
           <div onClick={() => setModalIsOpen(false)}>
@@ -138,7 +134,7 @@ const Container = styled.div`
   justify-content: space-between;
   margin: 4vw;
   width: auto;
-  height: 100%;
+  height: 96%;
 
   @media (min-width: 1200px) {
     gap: 8rem;
@@ -277,18 +273,18 @@ const ProjectDesc = styled.div`
 `
 
 const OverView = styled.div`
-  margin-top: 1rem;
+  display: none;
   h4 {
     font-size: 1.4rem;
     margin-block: 0.4rem;
+  }
 
-    p {
-      margin-bottom: 1rem;
-    }
+  p {
+    margin-bottom: 1rem;
+  }
 
-    @media (min-width: 1200px) {
-      font-size: 1.4rem;
-    }
+  @media (min-width: 1200px) {
+    display: block;
   }
 `
 const QuickNotes = styled.div``
@@ -379,10 +375,10 @@ const ProjectIconsDiv = styled.div`
 
 const IconText = styled.p`
   font-size: 1.4rem;
-  margin-top: 1.2rem;
+  ${'' /* margin-top: 1.2rem; */}
   padding-top: 1.6rem;
   padding-bottom: 0.8rem;
-  border-top: 1px solid ${colors.primary};
+  ${'' /* border-top: 1px solid ${colors.primary}; */}
 
   @media (min-width: 1200px) {
     border-top: 1px solid transparent;

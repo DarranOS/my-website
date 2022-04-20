@@ -119,7 +119,6 @@ const projectData = [
     status: 'Deployed MVP',
     quick: [
       '• A react game with Redux state management.',
-      '• Hosted on Vercel.',
       '• Animations with Framer Motion.',
     ],
     desc: ['Built as part of Odin project as an introduction to React.'],
@@ -128,12 +127,7 @@ const projectData = [
     git: 'https://github.com/DarranOS/memory-card',
     deploy: 'https://memory-card-913u3b868-darranos.vercel.app/',
     improv: ['Used redux to manage state'],
-    todo: [
-      'Add unmount animations',
-      'Add spinning card effect',
-      'Improve UI for interaction',
-      'Replace default Favicon and title',
-    ],
+    todo: ['Add unmount spinning animations', 'Improve UI for interaction'],
     done: ['Implement Redux'],
   },
 
@@ -251,7 +245,7 @@ const projectData = [
       "I built and have maintained this Wordpress site since 2018. It's been through a few tweaks and redesigns in that time.",
       "The front end was built with Elementor Page builder. Deployed stack on Google Cloud platform through Bitnami by VMware. SLL certs by Let's Encrypt",
     ],
-    icons: ['Wordpress', 'Elementor', 'Google Cloud Platform', 'Bitnami'],
+    icons: ['Wordpress', 'Elementor', 'Google Cloud Platform'],
 
     img: '/images/baytree_800.webp',
     // git: 'https://www.overleighatchester.co.uk',
@@ -274,7 +268,7 @@ const projectData = [
       'The front end was built with Elementor Page builder. Deployed stack on Google Cloud platform through Bitnami by VMware.',
       'Subsequently handed-off to an agency.',
     ],
-    icons: ['Wordpress', 'Elementor', 'Google Cloud Platform', 'Bitnami'],
+    icons: ['Wordpress', 'Elementor', 'Google Cloud Platform'],
 
     img: '/images/suburbs_800.webp',
     url: '/projects-2',
